@@ -1,0 +1,1113 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>济阳鼓子秧歌</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap core CSS -->
+
+  <link rel="stylesheet" href="css/saop_s.default.css">
+  <link rel="stylesheet" href="css/saop_s.top.css">
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <!-- 自定义样式 -->
+  <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 新增页眉图片区块 -->
+  <header class="page-header">
+    <div class="container text-center">
+      <img src="./images/页眉_1.jpg" alt="页眉图片" class="header-image img-fluid">
+    </div>
+  </header>
+
+  <!-- 修改后的导航栏 -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbarcollapse">
+        <ul class="navbar-nav mx-auto"> <!-- 使用mx-auto实现居中 -->
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="index.html" id="dropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-expanded="false">
+              首页
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a href="#index2" class="dropdown-item">演员信息</a></li>
+              <li><a href="#index3" class="dropdown-item">表演视频</a></li>
+              <li><a href="#index4" class="dropdown-item">获得奖项</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="演员信息.html" id="dropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-expanded="false">
+              相关内容
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a href="详细简介.html" class="dropdown-item">详细简介</a></li>
+              <li><a href="演员信息.html" class="dropdown-item">演员信息</a></li>
+              <li><a href="表演视频.html" class="dropdown-item">表演视频</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="演出地图.html">演出地图</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="关于我们.html">关于我们</a>
+          </li>
+        </ul>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse"
+        aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <style>
+    /* 自定义样式 */
+    .page-header {
+      background: #f3db99ea;
+      padding: 15px 0;
+      border-bottom: 1px solid #f8c301c4;
+    }
+
+    .header-image {
+
+      width: 100%;
+    }
+
+    .main-nav {
+      border-top: 2px solid #e9ecef;
+      box-shadow: 0 2px 4px rgba(204, 171, 7, 0.1);
+    }
+
+    .navbar-nav .nav-item {
+      margin: 0 15px;
+      position: relative;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 16px;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #007bff;
+      transform: translateY(-2px);
+    }
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 4px 12px rgba(234, 182, 12, 0.875);
+    }
+
+    @media (max-width: 992px) {
+      .header-image {
+        max-height: 60px;
+      }
+
+      .navbar-nav .nav-item {
+        margin: 5px 0;
+      }
+
+      .main-nav {
+        border-top-width: 1px;
+      }
+    }
+  </style>
+  <aside>
+    <audio src="mp3/bgmp3.mp3" loop="loop" controls="controls" autoplay="autoplay"></audio>
+    <marquee direction="down">背<br>景<br>音<br>乐</marquee>
+  </aside>
+  <main role="main" class="container-fluid p-4"id="index0">
+    <div class="row align-items-start">
+      <div class="col-md-1 pe-md-4"></div>
+      <!-- 左侧轮播图 -->
+      <div class="col-md-5 pe-md-4">
+        <div id="carouselPic" class="carousel slide carousel-fade" data-ride="carousel">
+          <div class="carousel-inner" style="height: 600px;"> <!-- 设置固定高度 -->
+            <div class="carousel-item active" data-interval="2000">
+              <img src="./images/image_0.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="">
+            </div>
+            <div class="carousel-item" data-interval="2000">
+              <img src="./images/image_1.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="">
+            </div>
+            <div class="carousel-item" data-interval="2000">
+              <img src="./images/image_2.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="">
+            </div>
+            <div class="carousel-item" data-interval="2000">
+              <img src="./images/image_3.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="">
+            </div>
+            <div class="carousel-item" data-interval="2000">
+              <img src="./images/image_4.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="">
+            </div>
+            <div class="carousel-item" data-interval="2000">
+              <img src="./images/image_5.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#carouselPic" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#carouselPic" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+
+          </button>
+          <ol class="carousel-indicators">
+            <li data-target="#carouselPic" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselPic" data-slide-to="1"></li>
+            <li data-target="#carouselPic" data-slide-to="2"></li>
+            <li data-target="#carouselPic" data-slide-to="3"></li>
+            <li data-target="#carouselPic" data-slide-to="4"></li>
+            <li data-target="#carouselPic" data-slide-to="5"></li>
+          </ol>
+        </div>
+      </div>
+      <!-- 右侧文字区域 -->
+      <div class="col-md-5 ps-md-4 mt-md-0 mt-3">
+        <div class="p-4 h-100" style="min-height: 300px; background-color: #fff9e6;">
+          <div class="scroll-container" style="height: 100%; max-height: 564px; overflow-y: auto; padding-right: 12px;">
+            <h3 class="mb-4 border-bottom pb-2">济阳鼓子秧歌简介<a href="详细简介.html" style="margin-left:20%">更多简介</a></h3>
+
+
+            <div class="content-wrapper">
+              <p class="index_jj mb-3">
+                &nbsp&nbsp济阳鼓子秧歌，这一具有千年历史的传统舞蹈，不仅是中国山东三大秧歌之一，更是黄河文化的瑰宝。它起源于明朝永乐年间，经过2000多年的发展，已成为黄河文化中不可分割的一部分。济阳鼓子秧歌以其独特的表演形式，如"街筒子"和"跑场子"，展现了浓厚的地方特色和丰富的情感表达。
+              </p>
+
+              <p class="index_jj mb-3">
+                &nbsp&nbsp济阳鼓子秧歌的表演形式独特，既有"街筒子"，也有"跑场子"。表演者包括伞、鼓、棒、花等角色，每个角色都有自己独特的动作和道具。伞有丑伞和小伞之分，鼓有大鼓和小鼓之别，棒有长棒和短棒之异，花则有拉花和扇花之别。通过各自的动作和道具，展现出丰富多彩的舞蹈内涵和鲜明的地方特色。
+              </p>
+
+              <p class="index_jj mb-3">
+                &nbsp&nbsp济阳鼓子秧歌的特点是锣鼓铿锵有力，舞姿粗犷豪放，气势恢弘磅礴，情感纯朴热烈。它不仅体现了鲁北人民豪爽乐观、大方热情的性格，还具有旺盛的生命力和鲜明的地方风格。
+              </p>
+
+              <p class="index_jj mb-3">
+                &nbsp&nbsp济阳鼓子秧歌的创新性融入现代元素，如参与泉水节、丰收节等，展现了传统与现代结合的新风貌。济阳鼓子秧歌不仅是中华文化瑰宝，更是连接古今、沟通世界的桥梁，代表着中国文化的自信与开放。
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        /* 自定义滚动条 */
+        .scroll-container::-webkit-scrollbar {
+          width: 6px;
+          background-color: transparent !important;
+          /* 确保内部容器透明 */
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+          background-color: transparent !important;
+          /* 段落背景透明 */
+          padding: 8px;
+          /* 增加呼吸感 */
+          border-radius: 4px;
+          /* 可选圆角 */
+
+        }
+
+        /* 响应式高度控制 */
+        @media (max-width: 768px) {
+          .scroll-container {
+            max-height: 400px !important;
+          }
+        }
+
+        /* 段落优化 */
+        .index_jj {
+          line-height: 1.8;
+          text-align: justify;
+          color: #495057;
+        }
+      </style>
+    </div>
+  </main>
+  <div class="l-wrapper is-load" data-page="top">
+    <div class="l-top">
+      <div class="l-top__content">
+        <section class="p-news js-scroll is-scrolled"style="margin-top: 0%;"id="index1">
+          <div class="p-news__inner">
+            <div class="p-news__cap c-cap">
+              <h3 class="c-cap__txt">
+                演出动态
+              </h3>
+            </div>
+            <ul class="c-list">
+              <li class="c-list__item c-frame">
+                <ul class="c-frame__line">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <ul class="c-frame__deco">
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                </ul>
+                <div class="c-list__item-inner">
+                  <p class="c-list__item-date">2025.02.09</p>
+                  <div class="c-list__item-title">
+                    &nbsp“风起流河 鼓动济阳”2025年第五届济阳鼓子秧歌展演</div>
+                </div>
+                <a href="zpjj4.html"></a>
+              </li>
+              <li class="c-list__item c-frame">
+                <ul class="c-frame__line">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <ul class="c-frame__deco">
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                </ul>
+                <div class="c-list__item-inner">
+                  <p class="c-list__item-date">年月日</p>
+                  <div class="c-list__item-title">
+                    &nbsp事件</div>
+                </div>
+                <a href="zpjj4.html"></a>
+              </li>
+              <li class="c-list__item c-frame">
+                <ul class="c-frame__line">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <ul class="c-frame__deco">
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                </ul>
+                <div class="c-list__item-inner">
+                  <p class="c-list__item-date">年月日</p>
+                  <div class="c-list__item-title">
+                    &nbsp事件</div>
+                </div>
+                <a href="zpjj4.html"></a>
+              </li>
+              <li class="c-list__item c-frame">
+                <ul class="c-frame__line">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <ul class="c-frame__deco">
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                  <li><img src="images/bg_corner.png" alt="" onmousedown="return false" oncopy="return false"
+                      onselectstart="return false" oncontextmenu="return false"></li>
+                </ul>
+                <div class="c-list__item-inner">
+                  <p class="c-list__item-date">年月日</p>
+                  <div class="c-list__item-title">
+                    &nbsp事件</div>
+                </div>
+                <a href="zpjj3.html"></a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="p-movie js-scroll"style="margin-top: 0%;"id="index2">
+          <div class="p-movie__cap c-cap">
+            <h3 class="c-cap__txt" style="margin-top: 40%;">演员信息</h3>
+          </div>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-primary scroll-item left-entrance" href="演员信息.html"
+                style="font-weight:500;margin-left:80%;font-size: 25px;">
+                更多演员 ➔
+              </a>
+            </li>
+          </ul>
+          <div class="container mt-5">
+            <div class="row">
+              <!-- 左侧人物信息 -->
+              <div class="col-md-2 mb-4 scroll-item info2-item left-entrance">
+                <div class="actor-card">
+                  <div class="actor-image-wrapper">
+                    <img src="./images/演员照片_1.png" alt="姚大新" class="actor-image">
+                  </div>
+                  <div class="actor-info mt-3">
+                    <h4 class="actor-name">姚大新</h4>
+                    <div class="actor-bio">
+                      <p class="mb-2">
+                        男。第二批国家级非物质文化遗产项目秧歌（济阳鼓子秧歌）代表性传承人。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 mb-4 scroll-item info2-item left-entrance">
+                <div class="actor-card">
+                  <div class="actor-image-wrapper">
+                    <img src="./images/演员信息_2.jpg" alt="豆庆国" class="actor-image">
+                  </div>
+                  <div class="actor-info mt-3">
+                    <h4 class="actor-name">豆庆国</h4>
+                    <div class="actor-bio">
+                      <p class="mb-2">
+                        男。济阳仁风镇流沙村人，济阳鼓子秧歌省级传承人，山东农村优秀文化人才。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 mb-4 scroll-item info2-item left-entrance">
+                <div class="actor-card">
+                  <div class="actor-image-wrapper">
+                    <img src="./images/演员图片_3.jpg" alt="豆永元" class="actor-image">
+                  </div>
+                  <div class="actor-info mt-3">
+                    <h4 class="actor-name">豆永元</h4>
+                    <div class="actor-bio">
+                      <p class="mb-2">
+                        男。济阳鼓子秧歌市级传承人。曾参与海峡两岸非物质文化遗产展演大会。</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 mb-4 scroll-item info2-item left-entrance">
+                <div class="actor-card">
+                  <div class="actor-image-wrapper">
+                    <img src="./images/演员图片_4.jpg" alt="姚永琴" class="actor-image">
+                  </div>
+                  <div class="actor-info mt-3">
+                    <h4 class="actor-name">姚永琴</h4>
+                    <div class="actor-bio">
+                      <p class="mb-2">
+                        女。济阳鼓子秧歌市级传承人。曾参与海峡两岸非物质文化遗产展演大会。</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 mb-4 scroll-item info2-item left-entrance">
+                <div class="actor-card">
+                  <div class="actor-image-wrapper">
+                    <img src="./images/演员图片_5.jpg" alt="杜成元" class="actor-image">
+                  </div>
+                  <div class="actor-info mt-3">
+                    <h4 class="actor-name">杜成元</h4>
+                    <div class="actor-bio">
+                      <p class="mb-2">
+                        男。济阳鼓子秧歌区级传承人。</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 mb-4 scroll-item info2-item left-entrance">
+                <div class="actor-card">
+                  <div class="actor-image-wrapper">
+                    <img src="./images/演员图片_6.jpg" alt="张月立" class="actor-image">
+                  </div>
+                  <div class="actor-info mt-3">
+                    <h4 class="actor-name">张月立</h4>
+                    <div class="actor-bio">
+                      <p class="mb-2">
+                        男。济阳鼓子秧歌区级传承人。</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 右侧原有内容 -->
+            </div>
+          </div>
+        </section>
+
+        <style>
+          /* 新增动画样式 */
+          .scroll-item {
+            opacity: 0;
+            transition: all 0.6s ease-out;
+            will-change: opacity, transform;
+          }
+
+          /* 左侧入场动画 */
+          .left-entrance {
+            transform: translateX(-30px);
+          }
+
+          /* 右侧入场动画 */
+          /* .right-entrance {
+            transform: translateX(30px);
+          } */
+
+          /* 激活状态 */
+          .scroll-item.active {
+            opacity: 1;
+            transform: translateX(0);
+          }
+
+          /* 演员卡片样式 */
+          .actor-card {
+            
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            
+          } 
+
+           .actor-card:hover {
+            transform: translateY(-5px);
+          }
+
+          /* 图片容器 */
+          .actor-image-wrapper {
+            aspect-ratio: 3/4;
+            /* 保持3:4比例 */
+            background: #f8f9fa;
+          }
+
+          .actor-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: 2px solid #eee;
+          }
+
+          /* 文字信息 */
+          .actor-name {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            border-left: 4px solid #e74c3c;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+          }
+
+          .actor-bio {
+            color: #555;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+          }
+          .info2-item {
+            background: #fff;
+            padding: 1rem;
+            margin-bottom: 0rem;
+            border-radius: 12px;
+
+          }
+
+          /* 响应式调整 */
+          @media (max-width: 768px) {
+            .actor-image-wrapper {
+              aspect-ratio: 16/9;
+              /* 移动端改为横版比例 */
+            }
+
+            .actor-name {
+              font-size: 1.3rem;
+            }
+
+            .actor-bio {
+              max-height: none;
+            }
+          }
+        </style>
+        <!-- <script>
+          // 滚动观察器
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+              } else {
+                entry.target.classList.remove('active'); // 移除这行则保持进入后不消失
+              }
+            });
+          }, {
+            threshold: 0.25, // 25%可见时触发
+            rootMargin: '0px 0px 50px 0px' // 底部提前50px触发
+          });
+
+          // 观察所有需要动画的元素
+          document.querySelectorAll('.scroll-item').forEach(item => {
+            observer.observe(item);
+          });
+
+          // 视差效果增强（可选）
+          window.addEventListener('scroll', () => {
+            document.querySelectorAll('.scroll-item.active').forEach(item => {
+              const rect = item.getBoundingClientRect();
+              const translateValue = rect.top * 0.2;
+              if (item.classList.contains('left-entrance')) {
+                item.style.transform = `translateX(${translateValue}px)`;
+              } else {
+                item.style.transform = `translateX(${-translateValue}px)`;
+              }
+            });
+          });
+        </script> -->
+        <section class="p-news js-scroll is-scrolled"id="index3">
+          <div class="p-news__inner">
+            <div class="p-news__cap c-cap">
+              <h3 class="c-cap__txt" style="margin-top: 40%;">表演视频</h3>
+            </div>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link text-primary " href="表演视频.html"
+                  style="font-weight:500;margin-left:5%;font-size: 25px;height: 10px;">
+                  更多视频 ➔
+                </a>
+              </li>
+            </ul>
+            <div class="container mt-5">
+              <div class="row g-4 ">
+                <!-- 视频项示例 -->
+                <div class="col-md-6 col-lg-4 video-item">
+                  <div class="video-card info-item  right-entrance">
+                    <div class="video-thumbnail">
+                      <img src="images/视频图片_1.jpg" alt="文艺汇演" class="img-fluid"
+                        data-video-src="videos/红心映国学秧歌筑梦航济南大学马克思主义学院暑假社会实践文艺汇演.mp4">
+                      <div class="play-icon">
+                        <i class="bi bi-play-circle"></i>
+                      </div>
+                    </div>
+                    <div class="video-info mt-3">
+                      <h5 class="video-title">文艺汇演</h5>
+                      <p class="video-desc">济南大学马克思学院社会实践文艺汇演</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- 重复其他视频项 -->
+                <div class="col-md-6 col-lg-4 video-item">
+                  <div class="video-card info-item  right-entrance">
+                    <div class="video-thumbnail">
+                      <img src="images/视频图片_2.jpg" alt="广场舞" class="img-fluid"
+                        data-video-src="videos/2024年济南市广场舞大赛济阳区分赛.mp4">
+                      <div class="play-icon">
+                        <i class="bi bi-play-circle"></i>
+                      </div>
+                    </div>
+                    <div class="video-info mt-3">
+                      <h5 class="video-title">广场舞</h5>
+                      <p class="video-desc">2024年济南市广场舞大赛</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4 video-item">
+                  <div class="video-card info-item  right-entrance">
+                    <div class="video-thumbnail">
+                      <img src="images/视频图片_3.jpg" alt="鼓子秧歌" class="img-fluid" data-video-src="videos/全运会济阳鼓子秧歌表演.mp4">
+                      <div class="play-icon">
+                        <i class="bi bi-play-circle"></i>
+                      </div>
+                    </div>
+                    <div class="video-info mt-3">
+                      <h5 class="video-title">鼓子秧歌</h5>
+                      <p class="video-desc">全运会济阳鼓子秧歌表演</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 video-item">
+                  <div class="video-card info-item  right-entrance">
+                    <div class="video-thumbnail">
+                      <img src="images/视频图片_4.jpg" alt="鼓子秧歌" class="img-fluid"
+                        data-video-src="videos/国家级非遗传承人进校暨山东秧歌教学汇演.mp4">
+                      <div class="play-icon">
+                        <i class="bi bi-play-circle"></i>
+                      </div>
+                    </div>
+                    <div class="video-info mt-3">
+                      <h5 class="video-title">鼓子秧歌</h5>
+                      <p class="video-desc">非遗进校园暨鼓子秧歌教学</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 video-item">
+                  <div class="video-card info-item  right-entrance">
+                    <div class="video-thumbnail">
+                      <img src="images/视频图片_5.png" alt="鼓子秧歌" class="img-fluid"
+                        data-video-src="videos/国家级非物质文化遗产——济阳鼓子秧歌~1.mp4">
+                      <div class="play-icon">
+                        <i class="bi bi-play-circle"></i>
+                      </div>
+                    </div>
+                    <div class="video-info mt-3">
+                      <h5 class="video-title">鼓子秧歌</h5>
+                      <p class="video-desc">非遗-济阳鼓子秧歌</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 video-item">
+                  <div class="video-card info-item  right-entrance">
+                    <div class="video-thumbnail">
+                      <img src="images/视频图片_6.jpg" alt="传统舞蹈" class="img-fluid"
+                        data-video-src="videos/2024年济南市元宵节传统舞蹈展演.mp4">
+                      <div class="play-icon">
+                        <i class="bi bi-play-circle"></i>
+                      </div>
+                    </div>
+                    <div class="video-info mt-3">
+                      <h5 class="video-title">传统舞蹈</h5>
+                      <p class="video-desc">济南市元宵节传统舞蹈展演</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3 video-item">
+                  <div class="video-card info-item  right-entrance">
+                    <div class="video-thumbnail">
+                      <img src="images/视频图片_7.jpg" alt="公益晚会" class="img-fluid"
+                        data-video-src="videos/济南市济阳区2020年国家扶贫日公益晚会.mp4">
+                      <div class="play-icon">
+                        <i class="bi bi-play-circle"></i>
+                      </div>
+                    </div>
+                    <div class="video-info mt-3">
+                      <h5 class="video-title">公益晚会</h5>
+                      <p class="video-desc">国家扶贫日公益晚会</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 视频播放器容器 -->
+          <div id="videoPlayer" class="video-player">
+            <div class="video-wrapper">
+              <video controls id="mainVideo">
+                <source id="videoSource" type="video/mp4">
+                您的浏览器不支持视频播放
+              </video>
+              <button class="close-btn">&times;</button>
+            </div>
+          </div>
+        </section>
+
+        <style>
+          /* 视频播放器样式 */
+          .video-player {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .video-desc {
+            color: #666;
+            font-size: 0.9rem;
+          }
+
+          .video-wrapper {
+            width: 80%;
+            max-width: 1200px;
+            position: relative;
+          }
+
+          #mainVideo {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+          }
+
+          .close-btn {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            color: white;
+            font-size: 2.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.3s;
+          }
+
+          .close-btn:hover {
+            opacity: 0.8;
+          }
+
+          /* 缩略图样式 */
+          .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 8px;
+          }
+
+          .video-thumbnail img {
+            transition: transform 0.3s;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+
+          .video-thumbnail:hover img {
+            transform: scale(1.05);
+          }
+
+          .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0.9;
+            transition: opacity 0.3s;
+          }
+
+          .video-thumbnail:hover .play-icon {
+            opacity: 1;
+          }
+
+          .scroll-item {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: opacity, transform;
+          }
+
+          .scroll-item.active {
+            opacity: 1;
+            transform: translateX(0);
+          }
+
+          /* 右侧信息项样式 */
+          .info-item {
+            background: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+          }
+
+          .info-item:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+          }
+
+          /* 响应式调整 */
+          @media (max-width: 768px) {
+            .scroll-item {
+              transform: translateY(30px) !important;
+            }
+
+            .scroll-item.active {
+              transform: translateY(0) !important;
+            }
+
+            .info-item {
+              padding: 1.5rem;
+              margin-bottom: 1.5rem;
+            }
+          }
+        </style>
+
+        <script>
+          // 视频播放控制
+          document.addEventListener('DOMContentLoaded', () => {
+            // 点击缩略图播放
+            document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+              thumbnail.addEventListener('click', () => {
+                const videoSrc = thumbnail.querySelector('img').dataset.videoSrc;
+                const videoPlayer = document.getElementById('videoPlayer');
+                const videoElement = document.getElementById('mainVideo');
+
+                // 设置视频源
+                videoElement.innerHTML = `<source src="${videoSrc}" type="video/mp4">`;
+                videoElement.load();
+
+                // 显示播放器
+                videoPlayer.style.display = 'flex';
+
+                // 尝试自动播放
+                videoElement.play().catch(error => {
+                  console.log('自动播放被阻止，需要用户交互');
+                });
+              });
+            });
+
+            // 关闭按钮
+            document.querySelector('.close-btn').addEventListener('click', () => {
+              const videoPlayer = document.getElementById('videoPlayer');
+              const videoElement = document.getElementById('mainVideo');
+
+              videoElement.pause();
+              videoPlayer.style.display = 'none';
+            });
+
+            // 点击背景关闭
+            document.getElementById('videoPlayer').addEventListener('click', (e) => {
+              if (e.target === document.getElementById('videoPlayer')) {
+                document.querySelector('.close-btn').click();
+              }
+            });
+          });
+
+          // 键盘控制
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+              document.querySelector('.close-btn').click();
+            }
+          });
+          // 滚动观察器配置
+          const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px 0px 0px',
+            threshold: 0.25
+          };
+
+          const infoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // 添加阶梯延迟
+                const index = Array.from(document.querySelectorAll('.scroll-item')).indexOf(entry.target);
+                entry.target.style.transitionDelay = `${index * 0.1}s`;
+              }
+              else {
+                entry.target.classList.remove('active');
+                entry.target.style.transitionDelay = '0s';
+              }
+            });
+          }, observerOptions);
+
+          // 观察所有信息项
+          document.querySelectorAll('.scroll-item').forEach(item => {
+            infoObserver.observe(item);
+          });
+
+          // 视差增强效果
+          window.addEventListener('scroll', () => {
+            document.querySelectorAll('.scroll-item.active').forEach(item => {
+              const rect = item.getBoundingClientRect();
+              const translateValue = Math.min(rect.top * 0.1, 0);
+              item.style.transform = `translateX(${translateValue}px)`;
+            });
+          }, { passive: true });
+        </script>
+        <section class="p-movie js-scroll"style="margin-top: 0%;"id="index4">
+          <div class="p-movie__cap c-cap">
+            <h3 class="c-cap__txt"style="margin-top: 20%;">获得奖项</h3>
+          </div>
+          <div class="p-movie__content">
+            <div class="c-thumb">
+              <div class="c-thumb__inner">
+                <figure style="background-image: url(images/image1_0.jpg);" class="active"></figure>
+                <figure style="background-image: url(images/image1_1.jpg);"></figure>
+                <figure style="background-image: url(images/image1_2.jpg);"></figure>
+                <figure style="background-image: url(images/image1_3.jpg);"></figure>
+                <figure style="background-image: url(images/image1_4.jpg);"></figure>
+                <figure style="background-image: url(images/image1_5.jpg);"></figure>
+              </div>
+              <div class="c-thumb__cover"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slides = document.querySelectorAll('.c-thumb__inner figure');
+      let currentSlide = 0;
+
+      function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }
+
+      // 初始化显示第一张
+      slides[currentSlide].classList.add('active');
+
+      // 设置自动播放（3秒切换）
+      setInterval(nextSlide, 2000);
+    });
+  </script>
+  <!-- 页脚 -->
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="#"> 地址：山东省济南市南辛庄西路336号济南大学 |</li>
+        <li> <a href="#">&nbsp;邮编：250022 </a>|</li>
+        <li><a href="#"> &nbsp;电话：19707083897 </a>|</li>
+        <li><a href="mailto:2246354952@qq.com"> &nbsp;邮箱：2246354952@qq.com </a></li>
+      </ul>
+    </nav>
+    <address><a href="#">Copyright &copy; szyydnl</a></address>
+  </footer>
+
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/js-scroll-effect-module.js"></script>
+  <script src="js/saop_s.top.js"></script>
+  <script type="text/javascript" src="./js/jquery.slim.min.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+
+  <div id="dailyMessage" class="daily-message">
+    <div class="message-content">
+      <span class="close-btn">&times;</span>
+      <p></p>
+    </div>
+  </div>
+  
+  <style>
+  /* 每日消息样式 */
+  .daily-message {
+    position: fixed;
+    bottom: 50px;
+    left: -300px; /* 初始位置在左侧外 */
+    z-index: 9999;
+    animation: float 25s linear infinite;
+    transition: all 0.5s ease;
+  }
+  
+  .message-content {
+    background: #e74c3c;
+    color: white;
+    padding: 15px 40px 15px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: relative;
+    min-width: 50px;
+    font-size: 14px;
+    max-width: 300px;
+  }
+  
+  .message-content p {
+    margin: 0;
+    display: inline;
+    font-weight: 500;
+  }
+  
+  .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  
+  .close-btn:hover {
+    opacity: 1;
+  }
+  
+  /* 悬浮动画 */
+  @keyframes float {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(calc(100vw + 300px)); /* 跨越屏幕宽度 */
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* 悬停暂停 */
+  .daily-message:hover {
+    animation-play-state: paused;
+    filter: brightness(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    .daily-message {
+      bottom: 10px;
+      animation: floatMobile 20s linear infinite;
+    }
+    
+    @keyframes floatMobile {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(100vw + 200px)); }
+    }
+  }
+  </style>
+  
+  <script>
+  // 消息控制功能
+  const dailyMessage = document.getElementById('dailyMessage');
+  let messageTimeout;
+  
+  // 关闭功能
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    dailyMessage.style.display = 'none';
+    // 24小时后重新显示（86400000毫秒）
+    setTimeout(() => {
+      dailyMessage.style.display = 'block';
+    }, 86400000);
+  });
+  
+  // 每日更新内容（示例）
+  function updateDailyMessage() {
+    const messages = [
+      "📢 明日预告：非遗传承人现场教学体验活动！",
+      "🌟 本周精选：百年秧歌服饰展持续开放中",
+      "🎁 粉丝福利：转发文章即可获赠纪念徽章",
+      "🎉 每日科普：济阳鼓子秧歌四角色:济阳鼓子秧歌的主要角色为伞、鼓、棒、花，这种命名方式是根据舞者所持用的道具命名的。伞分为丑伞和花伞，丑伞多扮作老汉形象，花伞多扮作青年。大鼓用来打击主旋律，小鼓和音。棒，表现的是矫健青少年的形象。花，花又称“拉花”，代表少女形象。"
+    ];
+    const today = new Date().getDate() % messages.length;
+    document.querySelector('.message-content p').textContent = messages[today];
+  }
+  
+  // 初始化
+  window.addEventListener('DOMContentLoaded', () => {
+    updateDailyMessage();
+    
+    // 10秒后自动变透明
+    messageTimeout = setTimeout(() => {
+      dailyMessage.style.opacity = '0.7';
+    }, 10000);
+  });
+  
+  // 鼠标交互
+  dailyMessage.addEventListener('mouseenter', () => {
+    clearTimeout(messageTimeout);
+    dailyMessage.style.opacity = '1';
+  });
+  
+  dailyMessage.addEventListener('mouseleave', () => {
+    messageTimeout = setTimeout(() => {
+      dailyMessage.style.opacity = '0.7';
+    }, 3000);
+  });
+  </script>
+</body>
+
+</html>

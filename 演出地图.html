@@ -1,0 +1,486 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>济阳鼓子秧歌</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="./css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- 新增页眉图片区块 -->
+    <header class="page-header">
+        <div class="container text-center">
+            <img src="./images/页眉_1.jpg" alt="页眉图片" class="header-image img-fluid">
+        </div>
+    </header>
+
+    <!-- 修改后的导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarcollapse">
+                <ul class="navbar-nav mx-auto"> <!-- 使用mx-auto实现居中 -->
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="dropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            首页
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a href="index.html#index2" class="dropdown-item">演员信息</a></li>
+                            <li><a href="index.html#index3" class="dropdown-item">表演视频</a></li>
+                            <li><a href="index.html#index4" class="dropdown-item">获得奖项</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="演员信息.html" id="dropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            相关内容
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a href="详细简介.html" class="dropdown-item">详细简介</a></li>
+                            <li><a href="演员信息.html" class="dropdown-item">演员信息</a></li>
+                            <li><a href="表演视频.html" class="dropdown-item">表演视频</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="演出地图.html">演出地图</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="关于我们.html">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse"
+                aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <style>
+        /* 自定义样式 */
+        .page-header {
+            background: #f3db99ea;
+            padding: 15px 0;
+            border-bottom: 1px solid #f8c301c4;
+        }
+
+        .header-image {
+
+            width: 100%;
+        }
+
+        .main-nav {
+            border-top: 2px solid #e9ecef;
+            box-shadow: 0 2px 4px rgba(204, 171, 7, 0.1);
+        }
+
+        .navbar-nav .nav-item {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 16px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+            transform: translateY(-2px);
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 12px rgba(234, 182, 12, 0.875);
+        }
+
+        @media (max-width: 992px) {
+            .header-image {
+                max-height: 60px;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 5px 0;
+            }
+
+            .main-nav {
+                border-top-width: 1px;
+            }
+        }
+    </style>
+    <div id="container"></div>
+</body>
+
+<!--三、引入高德地图的js-->
+<script type="text/javascript"
+    src="https://webapi.amap.com/maps?v=1.4.8&key=4330e2b7647f748ae388719bd88a1af7&plugin=AMap.ToolBar,AMap.Driving"></script>
+
+<style>
+    #container {
+        width: 80%;
+        height: 600px;
+        margin: auto
+    }
+
+    /* 信息窗容器 */
+    .custom-info-window {
+        background: #fff;
+        border-radius: 12px;
+        width: 280px;
+        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+    }
+
+    /* 头像样式 */
+    .actor-image {
+        width: 100%;
+        height: 180px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 12px;
+    }
+
+    .actor-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* 文字信息 */
+    .info-section {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .info-section strong {
+        color: #2c3e50;
+    }
+
+    h4 {
+        margin: 0 0 10px;
+        color: #e74c3c;
+        font-size: 18px;
+    }
+</style>
+<!--四、异步初始化高德地图插件-->
+<script type="text/javascript">
+    // 创建地图实例
+    var map = new AMap.Map("container", {
+        zoom: 10,
+        center: [117.120128,36.652069],
+        resizeEnable: true
+    });
+    AMap.plugin('AMap.ToolBar', function () {//异步加载插件
+        var toolbar = new AMap.ToolBar();
+        map.addControl(toolbar);
+    });
+    const actors = [
+        {
+            name: "“壮丽70年，奋进新时代”第二届群众文化展演月区县文化交流济阳区文化演出专场",
+            position: [117.065923,36.686232],
+            addr: "济南洪家楼广场",
+            act:"济阳鼓子秧歌艺术团",
+            avatar: "./images/演出地图 (1).png",
+            type: "标记"
+        },
+        {
+            name: "第十一届济南全运会",
+            position: [117.120308,36.656973],
+            addr: "济南市奥体中心",
+            act:"",
+            avatar: "./images/演出地图 (2).png",
+            type: "标记"
+        },
+        {
+            name: "鼓子秧歌省文化馆表演",
+            position: [117.036793,36.645029],
+            addr: "山东省文化馆（山东省省会济南市历下区经十一路）",
+            act:"济阳鼓子秧歌队",
+            avatar: "./images/演出地图 (3).png",
+            type: "标记"
+        },
+        {
+            name: "山东秧歌会演出",
+            position: [117.03112,36.667467],
+            addr: "济南市皇亭体育馆",
+            act:"济阳鼓子秧歌基层秧歌队",
+            avatar: "./images/演出地图 (4).png",
+            type: "标记"
+        },
+        {
+            name: "喜迎十九大•第十届山东省“泰山文艺奖”颁奖典礼暨首届秧歌会",
+            position: [117.03112,36.668524],
+            addr: "济南市皇亭体育馆",
+            act:"姚大新、秧歌队",
+            avatar: "./images/演出地图 (5).png",
+            type: "标记"
+        },
+        {
+            name: "“一方水土一方人”山东省非物质文化遗产月系列活动",
+            position: [117.040457,36.661251],
+            addr: "济南历山剧院",
+            act:"姚大新、姚永琴、济阳区仁风镇小学鼓子秧歌队",
+            avatar: "./images/演出地图 (6).png",
+            type: "标记"
+        },
+        {
+            name: "“迎新春 . 欢欢喜喜过大年” 全省非物质文化遗产春节年俗活动",
+            position: [117.036793,36.645827],
+            addr: "山东省文化馆（山东省省会济南市历下区经十一路）",
+            act:"济阳鼓子秧歌队",
+            avatar: "./images/演出地图 (7).png",
+            type: "标记"
+        },
+        {
+            name: "参加全省非物质文化遗产春节年俗活动启动仪式",
+            position: [117.036793,36.644827],
+            addr: "山东省文化馆（山东省省会济南市历下区经十一路）",
+            act:"豆永元等",
+            avatar: "./images/演出地图 (8).png",
+            type: "标记"
+        },
+        {
+            name: "第十一届全国运动会开幕式彩排",
+            position: [117.364735,37.164883],
+            addr: "山东省济南市济阳区仁风镇",
+            act:"济阳鼓子秧歌队",
+            avatar: "./images/演出地图 (9).png",
+            type: "标记"
+        },
+        {
+            name: "济阳鼓子秧歌少年济南行",
+            position: [117.014637,36.665992],
+            addr: "济南五龙潭公园南门",
+            act:"济阳区仁风镇中心小学31名孩子",
+            avatar: "./images/演出地图 (10).png",
+            type: "标记"
+        },
+        {
+            name: "《百福迎春》2021年山东省暨济南市“非物质文化遗产月”启动仪式",
+            position: [117.036793,36.645329],
+            addr: "山东省文化馆（山东省济南市历下区经十一路）",
+            act:"姚永琴、山东省青少年宫的秧歌学员们",
+            avatar: "./images/演出地图 (11).png",
+            type: "标记"
+        },
+        {
+            name: "《国泰民安迎新年》",
+            position: [117.17762,36.934058],
+            addr: "山东省济南市济阳区星河社区",
+            act:"星河社区居民",
+            avatar: "./images/演出地图 (12).png",
+            type: "标记"
+        },
+        {
+            name: "第十四届济南市少儿春节联欢晚会",
+            position: [117.025478,36.643954],
+            addr: "济南电视台（济南市历下区千佛山街道经十一路32号）",
+            act:"姚大新、姚永琴带领济阳区仁风镇小学鼓子秧歌队",
+            avatar: "./images/演出地图 (13).png",
+            type: "标记"
+        },
+        {
+            name: "济南市“村晚·暖村”系列活动",
+            position: [117.365235,37.164883],
+            addr: "山东省济南市济阳区仁风镇",
+            act:"仁风镇居民",
+            avatar: "./images/演出地图 (14).png",
+            type: "标记"
+        },
+        {
+            name: "济南市元宵节传统舞蹈",
+            position: [117.011702,36.674751],
+            addr: "济南市天桥区如意广场",
+            act:"济阳鼓子秧歌队",
+            avatar: "./images/演出地图 (15).png",
+            type: "标记"
+        },
+        {
+            name: "“大展宏‘兔’鼓子秧歌闹元宵”文艺汇演",
+            position: [117.397781,37.200698],
+            addr: "山东省济南市济阳区仁风镇流河村",
+            act:"济阳鼓子秧歌队",
+            avatar: "./images/演出地图 (16).png",
+            type: "标记"
+        },
+        {
+            name: "山东省旅游发展大会暨首届中国国际文化旅游博览会",
+            position: [117.024493,36.669214],
+            addr: "山东济南百花洲",
+            act:"济阳鼓子秧歌队",
+            avatar: "./images/演出地图 (17).png",
+            type: "标记"
+        },
+        {
+            name: "首届“中国秧歌节”展演",
+            position: [120.003833,36.26738],
+            addr: "胶州市体育中心（青岛市胶州市三里河街道）",
+            act:"济阳鼓子秧歌队",
+            avatar: "./images/演出地图 (18).png",
+            type: "标记"
+        },
+        {
+            name: "“舞动千万家·扭起秧歌过大年”暨山东乡村文化旅游节东营区元宵节大型民间文艺展演活动",
+            position: [118.586315,37.44901],
+            addr: "东营政府办公楼前广场",
+            act:"济阳鼓子秧歌队",
+            avatar: "./images/演出地图 (19).png",
+            type: "标记"
+        },
+        {
+            name: "第三届海峡两岸非物质文化遗产展演大会",
+            position: [119.21892,36.479642],
+            addr: "潍坊市安丘市",
+            act:"姚大新、豆永元、姚永琴、位尊山、司继文、姚永腾、司传美、杨凯悦、徐艺轩",
+            avatar: "./images/演出地图 (20).png",
+            type: "标记"
+        },
+        {
+            name: "“大地欢歌”山东省民间文化艺术之乡交流展示活动启动仪式暨首场鼓子秧歌展演",
+            position: [117.374571,37.536175],
+            addr: "滨州市阳信县洋湖乡",
+            act:"济阳鼓子秧歌队",
+            avatar: "./images/演出地图 (21).png",
+            type: "标记"
+        },
+        // 添加更多演员数据...
+    ];
+
+    // 创建样式不同的图标
+    const iconTypes = {
+        "标记": {
+            size: new AMap.Size(40, 50),
+            image: "./images/标注点.png"
+        },
+    };
+
+    // 批量创建标记
+    const markers = actors.map(actor => {
+        // 1. 创建标记
+        const marker = new AMap.Marker({
+            position: actor.position,
+            title: actor.name,
+            icon: new AMap.Icon({
+                size: iconTypes[actor.type].size,
+                image: iconTypes[actor.type].image,
+                imageSize: new AMap.Size(40, 50)
+            }),
+            offset: new AMap.Pixel(-20, -50)
+        });
+
+        // 2. 绑定信息窗体
+        const infoWindow = new AMap.InfoWindow({
+            isCustom: true,
+            anchor: 'bottom-center',
+            offset: new AMap.Pixel(0, -30),
+            content: createWindowContent(actor)
+        });
+
+        // 3. 绑定点击事件
+        marker.on('click', () => {
+            closeAllWindows(); // 关闭其他信息窗
+            infoWindow.open(map, marker.getPosition());
+        });
+
+        return marker;
+    });
+
+    // 添加所有标记到地图
+    map.add(markers);
+
+    // 创建信息窗内容
+    function createWindowContent(actor) {
+        return `
+    <div class="custom-info-window">
+      <div class="actor-image">
+        <img src="${actor.avatar}" alt="${actor.name}">
+      </div>
+      <h4>${actor.name}</h4>
+      <div class="info-section">
+        <p><strong>详细地址：</strong>${actor.addr}</p>
+        <p><strong>主要演员：</strong>${actor.act}</p>
+      </div>
+    </div>
+  `;
+    }
+
+    // 关闭所有信息窗
+    function closeAllWindows() {
+        markers.forEach(marker => {
+            marker.getExtData().infoWindow?.close();
+        });
+    }
+
+    // 点击地图空白处关闭信息窗
+    map.on('click', e => {
+        if (!e.target?.getPosition) closeAllWindows();
+    });
+</script>
+
+<script>
+    // 图片加载成功处理
+    function handleImageLoad(imgElement) {
+        const wrapper = imgElement.closest('.actor-image-wrapper');
+        if (wrapper) {
+            wrapper.classList.add('loaded');
+            imgElement.classList.add('loaded');
+        }
+    }
+
+    // 图片加载失败处理
+    function handleImageError(imgElement) {
+        const wrapper = imgElement.closest('.actor-image-wrapper');
+        if (wrapper) {
+            wrapper.classList.add('error');
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'error-message';
+            errorMsg.innerHTML = `
+      <svg class="error-icon" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+      </svg>
+      <span>图片加载失败</span>
+    `;
+            wrapper.appendChild(errorMsg);
+        }
+    }
+
+    // 动态加载内容处理
+    if (typeof AMap !== 'undefined') {
+        AMap.plugin('AMap.InfoWindow', () => {
+            const infoWindow = new AMap.InfoWindow({
+                isCustom: true,
+                content: `...修改后的HTML内容...`,
+                offset: new AMap.Pixel(16, -45)
+            });
+
+            infoWindow.on('open', () => {
+                document.querySelectorAll('.actor-image').forEach(img => {
+                    if (!img.complete) {
+                        img.style.opacity = '0';
+                    }
+                });
+            });
+        });
+    }
+</script>
+<footer>
+    <nav>
+      <ul>
+        <li><a href="#"> 地址：山东省济南市南辛庄西路336号济南大学 |</li>
+        <li> <a href="#">&nbsp;邮编：250022 </a>|</li>
+        <li><a href="#"> &nbsp;电话：19707083897 </a>|</li>
+        <li><a href="mailto:2246354952@qq.com"> &nbsp;邮箱：2246354952@qq.com </a></li>
+      </ul>
+    </nav>
+    <address><a href="#">Copyright &copy; szyydnl</a></address>
+  </footer>
+</body>
+
+</html>

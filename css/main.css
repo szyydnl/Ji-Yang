@@ -1,0 +1,113 @@
+body{
+    background-image: url("../images/大背景_1.jpg");
+}
+.carousel{
+    margin-bottom: 0rem;
+}
+
+.carousel-caption{
+    bottom: 1rem;
+    z-index: 10;
+}
+#carouselPic {
+    max-width: 100%;
+    margin: auto;
+}
+
+.carousel-inner {
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item {
+    text-align: center;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 36.2%;
+    transform: translateX(-50%);
+}
+
+@media (min-width:40em){
+    .carousel-caption p{
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+}
+
+main{
+    margin: 0px;
+}
+
+.album p,h4{
+    color: #616161;
+}
+
+footer{
+    width: 100%;
+    background: linear-gradient(to right,rgba(172, 159, 16, 0.527),rgb(250, 253, 230),rgba(238, 225, 81, 0.856));    
+    text-align: center;
+    color:rgb(128,128,0);
+    font-size: 12px;
+    padding: 10px 0;
+}
+
+footer a{
+    color:SaddleBrown;
+}
+
+footer nav{   
+    margin-bottom: 10px;
+ }
+footer li{
+     list-style: none;     
+     display:inline-block;
+}
+.alpha img{
+    height: 40px;
+    width: 125px;
+}
+body aside{
+    position: fixed;
+    top:200px;
+    left:0;
+    margin-left: -305px;
+    z-index: 99;
+}
+body audio::-webkit-media-controls-panel{
+    background-color: #f6ef23a0;
+}
+body aside marquee{
+    position:relative;
+    font-size: 18px;
+    width: 18px;
+    background: #0f1a52a0;
+    display: inline-block;
+    cursor: hand;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.515);
+    color: #f3e261d1;
+}
+body aside:hover{
+    margin-left: 0;
+    display: block;
+}
+body aside:hover marquee{
+    display: none;
+}
+
+
+
+

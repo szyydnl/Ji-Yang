@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+@font-face {
+    font-family: "myFont";
+    src: url("../font/萝莉体.ttf");
+  }
+  
+body{
+    font-family: "myFont";
+    background:url("../images/bg_num.gif");   
+}
+h1,h5,div,li,ul,label{
+    color: blue;
+	@supports (-webkit-background-clip: text) or (background-clip: text) {
+		background: linear-gradient(to right, red, blue);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+    }
+}
+main{
+    width: 1200px;
+    margin:30px auto ;
+}
+
+header{
+    height: 60px;
+    padding-left: 100px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 17px;
+    line-height: 60px;
+}
+
+header img{
+    float: left;
+}
+
+header ul{
+    margin-right: 400px;
+}
+
+header nav li{
+    width:100px;
+    text-align: center;
+    list-style: none;   
+    float: left;
+}
+
+footer{
+    width: 100%;
+    background: linear-gradient(to right,rgb(98, 211, 243),rgb(230, 253, 253),rgb(81, 209, 238));    
+    text-align: center;
+    color:rgb(128,128,0);
+    font-size: 12px;
+    padding: 10px 0;
+}
+
+footer a{
+    color:SaddleBrown;
+}
+
+footer nav{   
+   margin-bottom: 20px;
+}
+
+footer li{
+     list-style: none;     
+     display:inline-block;
+ }
+ .alpha img{
+    height: 40px;
+    width: 125px;
+}
+

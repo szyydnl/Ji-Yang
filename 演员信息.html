@@ -1,0 +1,528 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>济阳鼓子秧歌</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="./css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 新增页眉图片区块 -->
+    <header class="page-header">
+        <div class="container text-center">
+          <img src="./images/页眉_1.jpg" alt="页眉图片" class="header-image img-fluid">
+        </div>
+      </header>
+    
+      <!-- 修改后的导航栏 -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+        <div class="container">
+          <div class="collapse navbar-collapse" id="navbarcollapse">
+            <ul class="navbar-nav mx-auto"> <!-- 使用mx-auto实现居中 -->
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle" href="index.html" id="dropdownMenuLink" role="button"
+                      data-toggle="dropdown" aria-expanded="false">
+                      首页
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a href="index.html#index2" class="dropdown-item">演员信息</a></li>
+                      <li><a href="index.html#index3" class="dropdown-item">表演视频</a></li>
+                      <li><a href="index.html#index4" class="dropdown-item">获得奖项</a></li>
+                    </ul>
+                  </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="演员信息.html" id="dropdownMenuLink" role="button"
+                  data-toggle="dropdown" aria-expanded="false">
+                  相关内容
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a href="详细简介.html" class="dropdown-item">详细简介</a></li>
+                  <li><a href="演员信息.html" class="dropdown-item">演员信息</a></li>
+                  <li><a href="表演视频.html" class="dropdown-item">表演视频</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="演出地图.html">演出地图</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="关于我们.html">关于我们</a>
+              </li>
+            </ul>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse"
+            aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+    
+      <style>
+        /* 自定义样式 */
+        .page-header {
+          background: #f3db99ea;
+          padding: 15px 0;
+          border-bottom: 1px solid #f8c301c4;
+        }
+    
+        .header-image {
+    
+          width: 100%;
+        }
+    
+        .main-nav {
+          border-top: 2px solid #e9ecef;
+          box-shadow: 0 2px 4px rgba(204, 171, 7, 0.1);
+        }
+    
+        .navbar-nav .nav-item {
+          margin: 0 15px;
+          position: relative;
+        }
+    
+        .navbar-nav .nav-link {
+          font-size: 16px;
+          color: #333;
+          transition: all 0.3s ease;
+        }
+    
+        .navbar-nav .nav-link:hover {
+          color: #007bff;
+          transform: translateY(-2px);
+        }
+    
+        .dropdown-menu {
+          border: none;
+          box-shadow: 0 4px 12px rgba(234, 182, 12, 0.875);
+        }
+    
+        @media (max-width: 992px) {
+          .header-image {
+            max-height: 60px;
+          }
+    
+          .navbar-nav .nav-item {
+            margin: 5px 0;
+          }
+    
+          .main-nav {
+            border-top-width: 1px;
+          }
+        }
+      </style>
+    <main role="main">
+        <!-- 诗文欣赏卡片缩略图 -->
+        <div class="album py-5 text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                         
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员照片_1.png" alt="姚大新" class="card-img-top" id="DJ1">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>姚大新</h4>
+                                        <p class="card-text">
+                                            男。第二批国家级非物质文化遗产项目秧歌（济阳鼓子秧歌）代表性传承人。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员信息_2.jpg" alt="豆庆国" class="card-img-top" id="DJ2">
+                                
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>豆庆国</h4>
+                                        <p class="card-text">
+                                            男。济阳仁风镇流沙村人，济阳鼓子秧歌省级传承人，山东农村优秀文化人才。 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员图片_3.jpg" alt="豆永元" class="card-img-top" id="DJ3">
+                                  
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>豆永元</h4>
+                                        <p class="card-text">
+                                            男。济阳鼓子秧歌市级传承人。曾参与海峡两岸非物质文化遗产展演大会。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员图片_4.jpg" alt="姚永琴" class="card-img-top" id="DJ4">
+                                 
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>姚永琴</h4>
+                                        <p class="card-text">
+                                            女。济阳鼓子秧歌市级传承人。曾参与海峡两岸非物质文化遗产展演大会。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员图片_5.jpg" alt="杜成元" class="card-img-top" id="DJ5">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>杜成元</h4>
+                                        <p class="card-text">
+                                            男。济阳鼓子秧歌区级传承人。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员图片_6.jpg" alt="张月立" class="card-img-top" id="DJ6">
+                                 
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>张月立</h4>
+                                        <p class="card-text">
+                                            男。济阳鼓子秧歌区级传承人。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员图片_7.jpg" alt="张运新" class="card-img-top" id="DJ7">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>张运新</h4>
+                                        <p class="card-text">
+                                            男。济阳鼓子秧歌区级传承人。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员图片_8.jpg" alt="位遵燕" class="card-img-top" id="DJ8">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>位遵燕</h4>
+                                        <p class="card-text">
+                                            女。济阳鼓子秧歌区级传承人。 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员图片_9.jpg" alt="位遵山" class="card-img-top" id="DJ9">
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>位遵山</h4>
+                                        <p class="card-text">
+                                            男。济阳鼓子秧歌区级传承人。曾参与海峡两岸非物质文化遗产展演大会。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员图片_10.jpg" alt="姚永腾" class="card-img-top" id="DJ10">
+                                 
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>姚永腾</h4>
+                                        <p class="card-text">
+                                            男。济阳鼓子秧歌区级继承人。曾参与海峡两岸非物质文化遗产展演大会。 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/演员图片_11.jpg" alt="司继文" class="card-img-top" id="DJ11">
+                                  
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>司继文</h4>
+                                        <p class="card-text">
+                                            男。济阳鼓子秧歌区级继承人。曾参与海峡两岸非物质文化遗产展演大会。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/" alt="爱丽丝" class="card-img-top" id="DJ12">
+                                   
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>爱丽丝</h4>
+                                        <p class="card-text">
+                                            </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/" alt="爱丽丝" class="card-img-top" id="DJ13">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>爱丽丝</h4>
+                                        <p class="card-text">
+                                             </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <img src="./images/" alt="爱丽丝" class="card-img-top" id="DJ14">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h4>爱丽丝</h4>
+                                        <p class="card-text">
+                                            </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+       
+    </main>
+        <div id="return-top" class="top_e">
+            <img src="images/top.jpg" width="60px" id="img" >
+              <div style="width:60px;margin:auto;">
+                  <p id='font' style="font-size:20px;margin-left:10px;display:none;">返回<br>顶部</p>
+              </div>
+          </div>
+    <!-- 页脚 -->
+    <footer>
+        <nav>
+          <ul>
+            <li><a href="#"> 地址：山东省济南市南辛庄西路336号济南大学 |</li>
+            <li> <a href="#">&nbsp;邮编：250022 </a>|</li>
+            <li><a href="#"> &nbsp;电话：19707083897 </a>|</li>
+            <li><a href="mailto:2246354952@qq.com"> &nbsp;邮箱：2246354952@qq.com </a></li>
+          </ul>
+        </nav>
+        <address><a href="#">Copyright &copy; szyydnl</a></address>
+      </footer>
+    <script type="text/javascript" src="./js/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+    <style>
+        .kk1{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ1:hover+.kk1{
+                display: block;  
+        }
+        .kk2{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ2:hover+.kk2{
+                display: block;  
+        }.kk3{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ3:hover+.kk3{
+                display: block;  
+        }.kk4{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ4:hover+.kk4{
+                display: block;  
+        }.kk5{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ5:hover+.kk5{
+                display: block;  
+        }.kk6{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ6:hover+.kk6{
+                display: block;  
+        }.kk7{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ7:hover+.kk7{
+                display: block;  
+        }.kk8{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ8:hover+.kk8{
+                display: block;  
+        }.kk10{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ10:hover+.kk10{
+                display: block;  
+        }.kk11{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ11:hover+.kk11{
+                display: block;  
+        }
+        .kk12{
+            margin-top: -400px;
+            height: 180%;
+            position: absolute;
+            display: none;
+            z-index: 99;
+        }
+        div #DJ12:hover+.kk12{
+                display: block;  
+        }
+        
+    </style>
+       <style type="text/css">
+        
+        .top_e{
+             position:fixed;right:10px;bottom:40px;
+             background:rgba(204,200,255,0.6);
+             border-radius:15px;
+             cursor:pointer;
+             width:60px;
+             height:60px;
+             }
+        .top_e:hover
+        {
+          color:white;
+          background:#1296DB;
+        }
+     </style>
+    <script>
+    $(window).scroll(function(){
+        if($(window).scrollTop()>300){
+            $('#return-top').fadeIn(300);
+            }
+         else{$('#return-top').fadeOut(200);}
+             })
+            $("#return-top").click(function(){
+                scrollTo(0,0);
+            });
+            $(".top_e").mouseover(function(){
+            $("#img").hide();
+            $("#font").show();
+            })
+            $(".top_e").mouseout(function(){
+            $("#font").hide();
+            $("#img").show();
+            })
+    </script>
+</body>
+
+</html>
