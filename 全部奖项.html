@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>济阳鼓子秧歌</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- 自定义样式 -->
+    <link href="./css/main.css" rel="stylesheet">
+    <style>
+        h1 {
+            color: #4D4F53;
+            text-align: center;
+        }
+
+        #x {
+            color: #e1dd1a;
+            font-size: 19px;
+            text-align: center;
+        }
+
+        img {
+            width: 40%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        p {
+            text-indent: 2em;
+        }
+
+        #xx {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 新增页眉图片区块 -->
+    <header class="page-header">
+        <div class="container text-center">
+            <img src="./images/页眉_1.jpg" alt="页眉图片" class="header-image img-fluid">
+        </div>
+    </header>
+
+    <!-- 修改后的导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarcollapse">
+                <ul class="navbar-nav mx-auto"> <!-- 使用mx-auto实现居中 -->
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="dropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            首页
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a href="index.html#index2" class="dropdown-item">演员信息</a></li>
+                            <li><a href="index.html#index3" class="dropdown-item">表演视频</a></li>
+                            <li><a href="index.html#index4" class="dropdown-item">获得奖项</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="演员信息.html" id="dropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-expanded="false">
+                            相关内容
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a href="详细简介.html" class="dropdown-item">详细简介</a></li>
+                            <li><a href="演员信息.html" class="dropdown-item">演员信息</a></li>
+                            <li><a href="表演视频.html" class="dropdown-item">表演视频</a></li>
+                            <li><a href="全部奖项.html" class="dropdown-item">全部奖项</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="演出地图.html">演出地图</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="关于我们.html">关于我们</a>
+                    </li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse"
+                aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <style>
+        /* 自定义样式 */
+        .page-header {
+            background: #f3db99ea;
+            padding: 15px 0;
+            border-bottom: 1px solid #f8c301c4;
+        }
+
+        .header-image {
+
+            width: 100%;
+        }
+
+        .main-nav {
+            border-top: 2px solid #e9ecef;
+            box-shadow: 0 2px 4px rgba(204, 171, 7, 0.1);
+        }
+
+        .navbar-nav .nav-item {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 16px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #007bff;
+            transform: translateY(-2px);
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 12px rgba(234, 182, 12, 0.875);
+        }
+
+        @media (max-width: 992px) {
+            .header-image {
+                max-height: 60px;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 5px 0;
+            }
+
+            .main-nav {
+                border-top-width: 1px;
+            }
+        }
+    </style>
+    <main role="main">
+        <div class="album py-5 text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-12">
+                                    <div class="card-body">
+                                        <h1> 济阳鼓子秧歌获得荣誉</h1>
+                                        <br>
+                                        <p> 1990年12月获山东省首届农民文化艺术节舞蹈比赛银奖；</p>
+                                        <p> 1991年参加济南“91时届国际旅游节”开幕式表演；</p>
+                                        <p> 1991年获首届中国沈阳秧歌节暨全国优秀秧歌大赛优秀表演奖；</p>
+                                        <p> 1991年济阳区人民政府鼓子秧歌宣传封面展示；</p>
+
+                                        <img src="images/jx/济阳县人民政府宣传封面.jpg" alt="" width="500px">
+                                        <p id="x"> 图为 1991年济阳区人民政府鼓子秧歌宣传封面</p>
+
+                                        <p> 1993年应国际民间艺术组织的邀请，受中国文联的委托赴德、法两国参加国际艺术节和一系列民间艺术庆典活动历时45天，走遍德、法23个城市，演出70余场，被誉为“民间舞蹈之经典”、“迷人的东方芭蕾”；
+                                        </p>
+                                        <p> 1996年12月参加首届山东农民文化舞蹈比赛获银奖；</p>
+                                        <img src="images/jx/首届山东省农民文化艺术节舞蹈比赛银奖.jpg" alt="" width="500px">
+                                        <p id="x"> 图为 1996年12月首届山东农民文化舞蹈比赛银奖</p>
+                                        <p> 1997年受邀参加全国第三届农业博览会开幕式的表演；</p>
+                                        <p>2000年应日本山口氏之邀赴日本演出，进行文化交流；</p>
+                                        <p> 2003年1月24日登上齐鲁晚报专题新闻；</p>
+
+                                        <img src="images/jx/登上齐鲁晚报.jpg" alt="" width="500px">
+                                        <p id="x"> 图为 2003年1月24日登上齐鲁晚报专题新闻</p>
+                                        <p> 2004年春节荣获北京市二十一届龙潭庙会民间艺术汇演优秀表演第二名；</p>
+                                        <p> 2005年获济南市农民文化艺术节文艺汇演金奖；</p>
+                                        <p> 2005年在山东省农民文化艺术大奖赛上获得特等奖；</p>
+                                        <p> 2005年8月，受山东省民间艺术家协会的委派，作为山东省唯一代表参加第七届中国民间文艺山花奖、民间艺术表演奖暨中国民间广场歌舞展演活动，获优秀作品奖；
+                                        </p>
+                                        <p> 2006年参加世界文博会开幕式演出;</p>
+                                        <p> 2006年参加首届山东（国际）文化产业博览会大型文艺晚会《齐风鲁韵》；</p>
+                                        <p> 2006年被列入山东省首批非物质文化遗产保护名录；</p>
+                                        <p> 2006年1月参加济南市第二届农民文化艺术节文艺会演活动获金奖；</p>
+                                        <img src="images/jx/济南市第二届农民文化艺术节文艺会演活动 金奖.jpg" alt="" width="500px">
+                                        <p id="x">图为 济南市第二届农民文化艺术节文艺会演活动金奖</p>
+
+                                        <p>2006年参加济南市农民文化艺术节文艺会演活动获金奖；</p>
+                                        <img src="images/jx/济南市农民文化艺术节文艺会演金奖.jpg" alt="" width="500px">
+                                        <p id="x">图为 2006年济南市农民文化艺术节文艺会演活动金奖</p>
+                                        <p>2006年济阳区仁风鼓子秧歌队获省“优秀庄户剧团”称号；</p>
+                                        <img src="images/jx/山东省“优秀庄户剧团”.jpg" alt="" width="500px">
+                                        <p id="x">图为 2006年济阳区仁风鼓子秧歌队获省“优秀庄户剧团”称号</p>
+                                        <p>2007年4月参加中央电视台第四届舞蹈大赛荣获秧歌组第4名;</p>
+                                        <img src="images/jx/参加第四届CCTV电视舞蹈大赛.jpg" alt="" width="500px">
+                                        <p id="x">图为 参加第四届CCTV电视舞蹈大赛</p>
+                                        <p> 2007年4月，在“交银理财”杯CCTV全国电视舞蹈大赛中获大秧歌专场第四名，列山东三大秧歌之首；</p>
+                                        <img src="images/jx/《“交银理财杯”第四届CCTV电视舞蹈大赛》三等奖.jpg" alt="" width="500px">
+                                        <p id="x"> 图为 “交银理财”杯CCTV全国电视舞蹈大赛中获表演三等奖</p>
+                                        <p> 2007年参加济南市第三届农民文化艺术节文艺会演获金奖；</p>
+                                        <img src="images/jx/济南市第三届农民文化艺术节文艺汇演活动 金奖.jpg" alt="" width="500px">
+                                        <p id="x"> 图为 2007年济南市第三届农民文化艺术节文艺会演金奖</p>
+                                        <p> 2008年5月参加全国秧歌节大赛荣获优秀表演奖；</p>
+                                        <p> 2008年6月，国务院正式批准为国家非物质文化遗产；</p>
+                                        <p> 2009年10月参加第十一届全运会开幕式表演；</p>
+                                        <p> 2010 年 5 月，济阳鼓子秧歌参加中原艺术节；</p>
+                                        <p> 2011年参加了山东省非物质文化遗产博览会开闭幕式文化演出；</p>
+                                        <p> 2011年参加民间艺术表演大赛；</p>
+                                        <img src="images/jx/济阳县2011年民间艺术表演大赛.jpg" alt="" width="500px">
+                                        <p id="x"> 图为 济阳区2011年民间艺术表演大赛</p>
+                                        <p> 2014年11月19日参加中菲文艺交流演出；</p>
+                                        <img src="images/jx/中菲文艺交流演出.jpg" alt="" width="500px">
+                                        <p id="x"> 图为 中菲文艺交流演出</p>
+                                        <p> 2015年3月，在“中国（河南.鹤壁）社火艺术节”活动中所表演的《泉城闹春》节目荣获金奖；</p>
+                                        <img src="images/jx/山东民间舞蹈集《根·源》研讨会.jpg" alt="" width="500px">
+                                        <p id="x"> 图为 山东民间舞蹈集《根·源》研讨会</p>
+                                        <p> 2017年6月，应邀参加在山东省文化馆举办的“一带一路”非遗交流展演活动；</p>
+                                        <p> 2017年9月，应邀参加“喜迎十九大·第十届山东省泰山文艺奖·颁奖典礼暨首届秧歌会”演出；</p>
+                                        <p> 2017年10月，济阳鼓子秧歌表演艺术团作为唯一一支表演队伍赴陕西延安参加“喜迎十九大·全国民间欢庆锣鼓展演”活动；</p>
+                                        <img src="images/jx/全国优秀民间欢庆锣鼓展演.jpg" alt="" width="500px">
+                                        <p id="x"> 图为 艺术团参加“喜迎十九大·全国民间欢庆锣鼓展演”活动</p>
+                                        <p> 2017年11月，济阳鼓子秧歌又应邀参加第六届中国上海朱泾花灯节演出；</p>
+                                        <p> 2017年11月，参加“十艺济南”系列文化评选展示活动，获得“最佳节目奖”；</p>
+                                        <p> 济南市第一、二、三届大型民间艺术汇演一等奖，优秀表演奖；</p>
+                                        <p>山东省即济南市14届民间艺术汇演最佳奖；</p>
+                                        <p>2018年8月29日、9月14日，先后赴济南、北京参加庆祝改革开放40周年大型山东民间舞蹈诗《俺的山东大秧歌》等系列演出活动；</p>
+                                        <img src="images/jx/大型山东民间舞蹈诗优秀组织奖.png" alt="" width="500px">
+                                        <p id="x"> 图为 大型山东民间舞蹈诗优秀组织奖</p>
+                                        <p> 2019年参加济南“九一世界国际旅游节”开幕式表演，令三十多个国家的外宾惊叹；</p>
+                                        <p> 2020年受省文化馆派遣前往潍坊安丘市传承鼓子秧歌、参加元首之约第八届济南国际泉水节、山东省济南国际汇演中心表演节目、山东旅游发展大会暨首届中国国际文化博览会非遗项目展演、中国农民丰收节垛石镇安子坡村表演、第六届中国非遗博览会、济阳区2020年国家扶贫日公益晚会，参与录制济南新闻综合频道《有么说么》节目等；
+                                        </p>
+                                        <p> 2021年获得第十四届全运会群众赛事广场舞比赛三等奖；</p>
+                                        <img src="images/jx/中华人民共和国第十四届全运会群众展演广场舞三等奖.jpg" alt="" width="500px">
+                                        <p id="x"> 图为 中华人民共和国第十四届全运会群众展演广场舞三等奖</p>
+                                        <p> 2022年1月cctv17频道拍摄的鼓子秧歌专题片《虎虎声威闹虎年》节目，时长50分钟，分别在《央视频》和cctv17播出。</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                    data-target="#myModal2">评论</button>
+                                            </div>
+                                            <div id="tool">
+                                                <table>
+                                                    <tr>
+                                                        <td><img id="xx" src="./images/shou-cang.png" alt="收藏"
+                                                                width="19" height="19"></td>
+                                                        <td><img id="xx" src="./images/down-load.png" alt="下载"
+                                                                width="19" height="19"></td>
+                                                        <td><img id="xx" src="./images/co-py.png" alt="复制" width="19"
+                                                                height="19"></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </main>
+    <!-- 模态框（model） -->
+    <!-- 组件:时间线模态框(Modal) -->
+    <div class="modal fade" id="myModal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">时间线</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;
+                    </button>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-secondary" value="关闭" data-dismiss="modal">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialoq -->
+    </div><!--/.modal -->
+
+    <!-- 组件:评论模态框( Modal ) -->
+    <div class="modal fade" id="myModal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">时间线评论</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--模态框主体 (表单) -->
+                    <form>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">标题</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="请输入标题">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">评论</span>
+                            </div>
+                            <textarea class="form-control" rows="4" placeholder="请输入评论内容"></textarea>
+                        </div>
+                        <div class="form-group text-right">
+                            <div>
+                                <input type="submit" class="btn btn-primary" value="提交">
+                                <input type="button" class="btn btn-secondary" value="关闭" data-dismiss="modal">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    欢迎参与讨论，请在这里发表您对济阳鼓子秧歌的看法，交流您的观点。
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#myModal2">评论</button>
+    </div>
+    <!-- 页脚 -->
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#"> 地址：山东省济南市南辛庄西路336号济南大学 |</li>
+                <li> <a href="#">&nbsp;邮编：250022 </a>|</li>
+                <li><a href="#"> &nbsp;电话：19707083897 </a>|</li>
+                <li><a href="mailto:2246354952@qq.com"> &nbsp;邮箱：2246354952@qq.com </a></li>
+            </ul>
+        </nav>
+        <address><a href="#">Copyright &copy; szyydnl</a></address>
+    </footer>
+
+    <script type="text/javascript" src="./js/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+    <style>
+        div #DJ1 {
+            position: relative;
+            z-index: 99;
+            cursor: pointer;
+        }
+
+        div #DM1 {
+            display: none;
+            position: absolute;
+            width: 100%;
+            z-index: 88;
+        }
+    </style>
+    <script>
+        var DJ1 = document.getElementById("DJ1");
+        var DJ2 = document.getElementById("DJ2");
+        DJ1.onclick = function () {
+            DJ1.style.display = "none";
+            DM1.style.display = "block";
+            DM1.play();
+        };
+    </script>
+</body>
+
+</html>
