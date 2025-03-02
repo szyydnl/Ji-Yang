@@ -38,8 +38,8 @@ img:not(.carousel-item img) {
   opacity: 0;
   background: url(../img/common/bg_deco-01.png) top right/660px auto no-repeat, url(../img/common/bg_deco-02.png) bottom left/660px auto no-repeat;
   overflow: hidden;
-  font-family: YakuHanJP, "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック", YuGothic,
- "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  /* font-family: YakuHanJP, "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック", YuGothic,
+ "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif; */
 }
 
 .l-wrapper.is-load {
