@@ -260,8 +260,8 @@ img:not(.carousel-item img) {
   background-position: left top;
   background-repeat: no-repeat;
   color: transparent;
-/*   font-family: YakuHanJP, "Teko", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック",
- YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif; */
+  font-family: YakuHanJP, "Teko", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック",
+ YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
   font-size: 97px;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -296,7 +296,7 @@ img:not(.carousel-item img) {
 
 .c-frame {
   position: relative;
-  background: rgba(0, 0, 0, 0.341);
+  background: rgba(162, 170, 12, 0.193);
 }
 
 .c-frame__line, .c-frame__deco {
@@ -550,7 +550,7 @@ img:not(.carousel-item img) {
 }
 
 .c-list__item-date {
-  color: #54dddd;
+  color: #eabb11bc;
   font-family: YakuHanJP, "Teko", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック",
  YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
   font-weight: 600;
@@ -566,7 +566,7 @@ img:not(.carousel-item img) {
 }
 
 .c-list__item-title {
-  color: white;
+  color: rgb(0, 0, 0);
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   display: -webkit-box;

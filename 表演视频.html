@@ -9,114 +9,282 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <!-- 自定义样式 -->
     <link href="./css/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <!-- 新增页眉图片区块 -->
-    <header class="page-header">
-        <div class="container text-center">
-            <img src="./images/页眉_1.jpg" alt="页眉图片" class="header-image img-fluid">
-        </div>
-    </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+    <div class="container-fluid position-relative">
+      <!-- 页眉图片 -->
+      <div class="nav-header-image">
+        <img src="./images/logo.png" alt="Logo" class="img-fluid">
+      </div>
+   <!-- 导航内容 -->
+   <div class="collapse navbar-collapse" id="navbarContent">
+    <ul class="navbar-nav mx-auto text-center">
+      <!-- 首页项 -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">首页</a>
+      </li>
+      <!-- 其他导航项 -->
+      <li class="nav-item">
+        <a class="nav-link" href="详细简介.html">秧歌介绍</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="演员信息.html">演员信息</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="表演视频.html">教育资源</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="全部奖项.html">过往奖项</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="演出地图.html">演出地图</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="关于我们.html">关于我们</a>
+      </li>
+    </ul>
+  </div>
+  <!-- 汉堡菜单按钮 -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</div>
+</nav>
 
-    <!-- 修改后的导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarcollapse">
-                <ul class="navbar-nav mx-auto"> <!-- 使用mx-auto实现居中 -->
-                    <li class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="index.html" id="dropdownMenuLink" role="button"
-                          data-toggle="dropdown" aria-expanded="false">
-                          首页
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <li><a href="index.html#index2" class="dropdown-item">演员信息</a></li>
-                          <li><a href="index.html#index3" class="dropdown-item">表演视频</a></li>
-                          <li><a href="index.html#index4" class="dropdown-item">获得奖项</a></li>
-                        </ul>
-                      </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="演员信息.html" id="dropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
-                            相关内容
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a href="详细简介.html" class="dropdown-item">详细简介</a></li>
-                            <li><a href="演员信息.html" class="dropdown-item">演员信息</a></li>
-                            <li><a href="表演视频.html" class="dropdown-item">表演视频</a></li>
-                            <li><a href="全部奖项.html" class="dropdown-item">全部奖项</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="演出地图.html">演出地图</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="关于我们.html">关于我们</a>
-                    </li>
-                </ul>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse"
-                aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+<style>
+/* 优化后的样式 */
+.main-nav {
+  position: relative;
+  padding-left: 20%;
+  /* 为页眉图片留出空间 */
+  min-height: 80px;
 
-    <style>
-        /* 自定义样式 */
-        .page-header {
-            background: #f3db99ea;
-            padding: 15px 0;
-            border-bottom: 1px solid #f8c301c4;
+}
+
+.nav-header-image {
+  position: absolute;
+  left: -3%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32%;
+  padding: 0 15px;
+  z-index: 1;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0 15px;
+}
+
+.nav-link {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+/* 动态背景效果 */
+.nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(images/纹理.jpg) center/cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+/* 桌面端样式 */
+@media (min-width: 1500px) {
+  .navbar-nav {
+    width: 80%;
+    justify-content: flex-end;
+  }
+
+  .nav-item {
+    margin: 0 15px;
+  }
+
+  .dropdown-menu {
+    margin-top: 10px;
+  }
+}
+
+/* 平板端样式 */
+@media (max-width: 1500px)and (min-width: 992px){
+  .main-nav {
+    padding-left: 0;
+    background: white;
+  }
+
+  .nav-header-image {
+    position: static;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-left: 15%;
+    padding: 10px 0;
+  }
+
+  /* .navbar-collapse {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  } */
+
+  .nav-item {
+    margin: 5px 0;
+  }
+
+  .dropdown-menu {
+    margin-left: 20px;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+/* 移动端样式 */
+@media (max-width: 992.98px) {
+.main-nav {
+padding-left: 0;
+background: white;
+}
+
+.nav-header-image {
+position: static;
+width: 40%;
+margin: 0 auto;
+margin-top: 5%;
+
+padding: 10px 0;
+z-index: 1;
+}
+
+.navbar-toggler {
+position: absolute;
+right: 15px;
+top: 50%;
+transform: translateY(-50%);
+
+}
+
+.navbar-collapse {
+background: rgba(255, 255, 255, 0.95);
+padding: 15px;
+margin-top: 10px;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav {
+padding-top: 10px;
+width: 100%; /* 确保宽度占满 */
+}
+
+.nav-item {
+margin: 5px 0;
+text-align: center; /* 文字居中 */
+}
+
+.nav-link {
+padding: 10px 15px;
+display: block; /* 确保链接占满宽度 */
+}
+}
+
+/* 确保导航栏容器正确显示 */
+.navbar-collapse {
+  transition: all 0.3s ease;
+}
+
+
+
+.nav-item.active::before,
+.nav-item:hover::before {
+  opacity: 0.8;
+}
+
+/* 首页下拉按钮优化 */
+.nav-link-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdown-toggle {
+  border: none;
+  background: transparent;
+  padding: 0 0 0 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.arrow-icon {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 2px solid currentColor;
+  border-left: none;
+  border-top: none;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-left: 5px;
+}
+
+.show .arrow-icon {
+  transform: rotate(-135deg);
+}
+</style>
+
+
+  <script>
+    
+
+    // 动态背景交互
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('mousemove', (e) => {
+        const rect = item.getBoundingClientRect();
+        const bg = item.querySelector('::before');
+        if (bg) {
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          bg.style.backgroundPosition = `${x}px ${y}px`;
         }
+      });
+    });
 
-        .header-image {
-
-            width: 100%;
-        }
-
-        .main-nav {
-            border-top: 2px solid #e9ecef;
-            box-shadow: 0 2px 4px rgba(204, 171, 7, 0.1);
-        }
-
-        .navbar-nav .nav-item {
-            margin: 0 15px;
-            position: relative;
-        }
-
-        .navbar-nav .nav-link {
-            font-size: 16px;
-            color: #333;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #007bff;
-            transform: translateY(-2px);
-        }
-
-        .dropdown-menu {
-            border: none;
-            box-shadow: 0 4px 12px rgba(234, 182, 12, 0.875);
-        }
-
-        @media (max-width: 992px) {
-            .header-image {
-                max-height: 60px;
-            }
-
-            .navbar-nav .nav-item {
-                margin: 5px 0;
-            }
-
-            .main-nav {
-                border-top-width: 1px;
-            }
-        }
-    </style>
+    // 当前页面高亮
+    const currentPath = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.parentElement.classList.add('active');
+      }
+    });
+  </script>
     <main role="main">
-        <!-- 诗文欣赏卡片缩略图 -->
+<!-- 导航标签 -->
+  <div class="content-nav"style="text-align: center;">
+    <div class="nav-item1 active" data-target="performance">
+      表演视频
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-item1" data-target="lecture">
+      技艺讲堂
+    </div>
+  </div>
+  <!-- 内容区域 -->
+  <div class="content-wrapper">
+    <div id="performance" class="content-section active">
         <div class="album py-5 text">
             <div class="container">
                 <div class="row">
@@ -125,15 +293,15 @@
                             <div class="video-card">
                                 <div class="video-thumbnail">
                                     <img src="images/视频图片_1.jpg" alt="文艺汇演" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/红心映国学秧歌筑梦航济南大学马克思主义学院暑假社会实践文艺汇演.mp4">
+                                    data-video-src=" videos/知行合一，美育花开——“红心映国学，秧歌筑梦航”济南大学马克思主义学院暑假社会实践文艺汇演.mp4">
                                     <div class="play-icon">
                                         <i class="bi bi-play-circle"></i>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="video-info mt-3">
-                                        <h5 class="video-title">文艺汇演</h5>
-                                        <p class="video-desc">济南大学马克思主义学院社会实践文艺汇演</p>
+                                        <h5 class="video-title">知行合一，美育花开</h5>
+                                        <p class="video-desc">“红心映国学，秧歌筑梦航”济南大学马克思主义学院暑假社会实践文艺汇演</p>
                                     </div>
 
                                     <div class="d-flex justify-content-between align-items-center">
@@ -161,61 +329,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="video-card">
-                                <div class="video-thumbnail">
-                                    <img src="images/视频图片_2.jpg" alt="教学汇演" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/2024年济南市广场舞大赛济阳区分赛.mp4">
-                                    <div class="play-icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="video-info mt-3">
-                                        <h5 class="video-title">广场舞</h5>
-                                        <p class="video-desc">2024年济南市广场舞大赛济阳区分赛</p>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-
-                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
-                                                data-target="#myModal2">评论</button>
-                                        </div>
-                                        <div id="tool">
-                                            <table>
-                                                <tr>
-                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
-                                                            height="19">
-                                                    </td>
-                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
-                                                            height="19">
-                                                    </td>
-                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
                             <div class="video-card">
                                 <div class="video-thumbnail">
                                     <img src="images/视频图片_3.jpg" alt="全运会" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/全运会济阳鼓子秧歌表演.mp4">
+                                    data-video-src=" videos/韵动鼓歌，闪耀全运——济阳鼓子秧歌全运会表演.mp4">
                                     <div class="play-icon">
                                         <i class="bi bi-play-circle"></i>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="video-info mt-3">
-                                        <h5 class="video-title">全运会</h5>
-                                        <p class="video-desc">全运会济阳鼓子秧歌表演</p>
+                                        <h5 class="video-title">韵动鼓歌，闪耀全运</h5>
+                                        <p class="video-desc">济阳鼓子秧歌全运会表演</p>
                                     </div>
 
                                     <div class="d-flex justify-content-between align-items-center">
@@ -243,101 +371,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="video-card">
-                                <div class="video-thumbnail">
-                                    <img src="images/视频图片_4.jpg" alt="教学汇演" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/国家级非遗传承人进校暨山东秧歌教学汇演.mp4">
-                                    <div class="play-icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="video-info mt-3">
-                                        <h5 class="video-title">教学汇演</h5>
-                                        <p class="video-desc">国家级非遗传承人进校暨山东秧歌教学汇演</p>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-
-                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
-                                                data-target="#myModal2">评论</button>
-                                        </div>
-                                        <div id="tool">
-                                            <table>
-                                                <tr>
-                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
-                                                            height="19">
-                                                    </td>
-                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
-                                                            height="19">
-                                                    </td>
-                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="video-card">
-                                <div class="video-thumbnail">
-                                    <img src="images/视频图片_5.png" alt="济阳鼓子秧歌" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/国家级非物质文化遗产——济阳鼓子秧歌~1.mp4">
-                                    <div class="play-icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="video-info mt-3">
-                                        <h5 class="video-title">济阳鼓子秧歌</h5>
-                                        <p class="video-desc">国家级非物质文化遗产——济阳鼓子秧歌</p>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-
-                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
-                                                data-target="#myModal2">评论</button>
-                                        </div>
-                                        <div id="tool">
-                                            <table>
-                                                <tr>
-                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
-                                                            height="19">
-                                                    </td>
-                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
-                                                            height="19">
-                                                    </td>
-                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
                             <div class="video-card">
                                 <div class="video-thumbnail">
                                     <img src="images/视频图片_6.jpg" alt="舞蹈展演" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/2024年济南市元宵节传统舞蹈展演.mp4">
+                                    data-video-src=" videos/舞韵团圆，阖家欢乐——2024年济南市元宵节传统舞蹈展演.mp4">
                                     <div class="play-icon">
                                         <i class="bi bi-play-circle"></i>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="video-info mt-3">
-                                        <h5 class="video-title">舞蹈展演</h5>
+                                        <h5 class="video-title">舞韵团圆，阖家欢乐</h5>
                                         <p class="video-desc">2024年济南市元宵节传统舞蹈展演</p>
                                     </div>
 
@@ -370,15 +417,16 @@
                         <div class="card mb-4 shadow-sm">
                             <div class="video-card">
                                 <div class="video-thumbnail">
-                                    <img src="images/视频图片_7.jpg" alt="济南市济阳区2020年国家扶贫日公益晚会" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/济南市济阳区2020年国家扶贫日公益晚会.mp4">
+                                    <img src="images/视频图片_7.jpg" alt="济南市济阳区2020年国家扶贫日公益晚会" class="card-img-top"
+                                        id="DJ1""
+                                    data-video-src=" videos/善行济阳，教育扶贫——济南市济阳区2020年国家扶贫日公益晚会.mp4">
                                     <div class="play-icon">
                                         <i class="bi bi-play-circle"></i>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="video-info mt-3">
-                                        <h5 class="video-title">公益晚会</h5>
+                                        <h5 class="video-title">善行济阳，教育扶贫</h5>
                                         <p class="video-desc">济南市济阳区2020年国家扶贫日公益晚会</p>
                                     </div>
 
@@ -412,15 +460,99 @@
                             <div class="video-card">
                                 <div class="video-thumbnail">
                                     <img src="images/视频图片_8.jpg" alt="济阳鼓子秧歌表演" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/济阳鼓子秧歌表演.mp4">
+                                    data-video-src=" videos/非遗鼓韵，传承有我——济阳鼓子秧歌表演.mp4">
                                     <div class="play-icon">
                                         <i class="bi bi-play-circle"></i>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="video-info mt-3">
-                                        <h5 class="video-title">鼓子秧歌表演</h5>
+                                        <h5 class="video-title">非遗鼓韵，传承有我</h5>
                                         <p class="video-desc">济阳鼓子秧歌表演</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                data-target="#myModal2">评论</button>
+                                        </div>
+                                        <div id="tool">
+                                            <table>
+                                                <tr>
+                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="video-card">
+                                <div class="video-thumbnail">
+                                    <img src="images/视频图片_10.jpg" alt="文艺演出" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/薪火相传，礼赞中华——济阳区庆祝中华人民共和国成立75周年暨人民政协成立75周年文艺演出.mp4">
+                                    <div class="play-icon">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="video-info mt-3">
+                                        <h5 class="video-title">薪火相传，礼赞中华</h5>
+                                        <p class="video-desc">济阳区庆祝中华人民共和国成立75周年暨人民政协成立75周年文艺演出</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                data-target="#myModal2">评论</button>
+                                        </div>
+                                        <div id="tool">
+                                            <table>
+                                                <tr>
+                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="video-card">
+                                <div class="video-thumbnail">
+                                    <img src="images/视频图片_12.jpg" alt="鼓子秧歌表演" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/舞动乡土，美育课堂——秧歌表演.mp4">
+                                    <div class="play-icon">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="video-info mt-3">
+                                        <h5 class="video-title">舞动乡土，美育课堂</h5>
+                                        <p class="video-desc">秧歌表演</p>
                                     </div>
 
                                     <div class="d-flex justify-content-between align-items-center">
@@ -452,15 +584,364 @@
                         <div class="card mb-4 shadow-sm">
                             <div class="video-card">
                                 <div class="video-thumbnail">
-                                    <img src="images/视频图片_9.png" alt="济阳鼓子秧歌专题宣传片" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/济阳鼓子秧歌专题宣传片.mp4">
+                                    <img src="images/视频图片_13.jpg" alt="鼓子秧歌表演" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/鼓韵交锋，秧歌炫彩——山东三大鼓子秧歌现场切磋.mp4">
                                     <div class="play-icon">
                                         <i class="bi bi-play-circle"></i>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="video-info mt-3">
-                                        <h5 class="video-title">宣传片</h5>
+                                        <h5 class="video-title">鼓韵交锋，秧歌炫彩</h5>
+                                        <p class="video-desc">山东三大鼓子秧歌现场切磋</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                data-target="#myModal2">评论</button>
+                                        </div>
+                                        <div id="tool">
+                                            <table>
+                                                <tr>
+                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="video-card">
+                                <div class="video-thumbnail">
+                                    <img src="images/视频图片_14.jpg" alt="鼓子秧歌表演" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/舞韵育魂，薪火相传——第十四届济南市少儿春晚联欢晚会.mp4">
+                                    <div class="play-icon">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="video-info mt-3">
+                                        <h5 class="video-title">舞韵育魂，薪火相传</h5>
+                                        <p class="video-desc">第十四届济南市少儿春晚联欢晚会</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                data-target="#myModal2">评论</button>
+                                        </div>
+                                        <div id="tool">
+                                            <table>
+                                                <tr>
+                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="video-card">
+                                <div class="video-thumbnail">
+                                    <img src="images/视频图片_15.jpg" alt="鼓子秧歌表演" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/灯影传薪，非遗新生——2017第六届中国朱泾花灯节.mp4">
+                                    <div class="play-icon">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="video-info mt-3">
+                                        <h5 class="video-title">灯影传薪，非遗新生</h5>
+                                        <p class="video-desc">2017第六届中国朱泾花灯节</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                data-target="#myModal2">评论</button>
+                                        </div>
+                                        <div id="tool">
+                                            <table>
+                                                <tr>
+                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="video-card">
+                                <div class="video-thumbnail">
+                                    <img src="images/视频图片_16.jpg" alt="鼓子秧歌表演" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/民艺匠心，课堂无界——济南市“优秀民间艺人”调演.mp4">
+                                    <div class="play-icon">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="video-info mt-3">
+                                        <h5 class="video-title">民艺匠心，课堂无界</h5>
+                                        <p class="video-desc">济南市“优秀民间艺人”调演</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                data-target="#myModal2">评论</button>
+                                        </div>
+                                        <div id="tool">
+                                            <table>
+                                                <tr>
+                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="video-card">
+                                <div class="video-thumbnail">
+                                    <img src="images/视频图片_17.jpg" alt="鼓子秧歌表演" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/山河擂鼓，大地飞歌——首届中国秧歌节《齐鲁鼓风》.mp4">
+                                    <div class="play-icon">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="video-info mt-3">
+                                        <h5 class="video-title">山河擂鼓，大地飞歌</h5>
+                                        <p class="video-desc">首届中国秧歌节《齐鲁鼓风》</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                data-target="#myModal2">评论</button>
+                                        </div>
+                                        <div id="tool">
+                                            <table>
+                                                <tr>
+                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 视频播放器容器 -->
+                    <!-- <div id="videoPlayer" class="video-player">
+                        <div class="video-wrapper">
+                            <video controls id="mainVideo">
+                                <source id="videoSource" type="video/mp4">
+                                您的浏览器不支持视频播放
+                            </video>
+                            <button class="close-btn">&times;</button>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="lecture" class="content-section ">
+        <div class="album py-5 text">
+            <div class="container">
+                <div class="row">
+                
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="video-card">
+                                <div class="video-thumbnail">
+                                    <img src="images/视频图片_2.jpg" alt="教学汇演" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/舞动泉城，美育万家——2024年济南市广场舞大赛济阳区分赛.mp4">
+                                    <div class="play-icon">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="video-info mt-3">
+                                        <h5 class="video-title">舞动泉城，美育万家</h5>
+                                        <p class="video-desc">2024年济南市广场舞大赛济阳区分赛</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                data-target="#myModal2">评论</button>
+                                        </div>
+                                        <div id="tool">
+                                            <table>
+                                                <tr>
+                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="video-card">
+                                <div class="video-thumbnail">
+                                    <img src="images/视频图片_4.jpg" alt="教学汇演" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/非遗薪传，青春律动——国家级非遗传承人进校暨山东秧歌教学汇演.mp4">
+                                    <div class="play-icon">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="video-info mt-3">
+                                        <h5 class="video-title">非遗薪传，青春律动</h5>
+                                        <p class="video-desc">国家级非遗传承人进校暨山东秧歌教学汇演</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                data-target="#myModal2">评论</button>
+                                        </div>
+                                        <div id="tool">
+                                            <table>
+                                                <tr>
+                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="video-card">
+                                <div class="video-thumbnail">
+                                    <img src="images/视频图片_5.png" alt="济阳鼓子秧歌" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/鼓韵育魂，薪火课堂——国家级非物质文化遗产——济阳鼓子秧歌.mp4">
+                                    <div class="play-icon">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="video-info mt-3">
+                                        <h5 class="video-title">鼓韵育魂，薪火课堂</h5>
+                                        <p class="video-desc">国家级非物质文化遗产——济阳鼓子秧歌</p>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
+                                                data-target="#myModal2">评论</button>
+                                        </div>
+                                        <div id="tool">
+                                            <table>
+                                                <tr>
+                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
+                                                            height="19">
+                                                    </td>
+                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="video-card">
+                                <div class="video-thumbnail">
+                                    <img src="images/视频图片_9.png" alt="济阳鼓子秧歌专题宣传片" class="card-img-top" id="DJ1""
+                                    data-video-src=" videos/文化解码，薪火永续——济阳鼓子秧歌专题宣传片.mp4">
+                                    <div class="play-icon">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="video-info mt-3">
+                                        <h5 class="video-title">文化解码，薪火永续</h5>
                                         <p class="video-desc">济阳鼓子秧歌专题宣传片</p>
                                     </div>
 
@@ -493,56 +974,15 @@
                         <div class="card mb-4 shadow-sm">
                             <div class="video-card">
                                 <div class="video-thumbnail">
-                                    <img src="images/视频图片_10.jpg" alt="文艺演出" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/济阳区庆祝中华人民共和国成立75周年暨人民政协成立75周年文艺演出.mp4">
-                                    <div class="play-icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="video-info mt-3">
-                                        <h5 class="video-title">文艺演出</h5>
-                                        <p class="video-desc">济阳区庆祝中华人民共和国成立75周年暨人民政协成立75周年文艺演出</p>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-
-                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
-                                                data-target="#myModal2">评论</button>
-                                        </div>
-                                        <div id="tool">
-                                            <table>
-                                                <tr>
-                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
-                                                            height="19">
-                                                    </td>
-                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
-                                                            height="19">
-                                                    </td>
-                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="video-card">
-                                <div class="video-thumbnail">
                                     <img src="images/视频图片_11.jpg" alt="秧齐歌鲁" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/山东民间艺术之秧齐歌鲁.mp4">
+                                    data-video-src=" videos/匠艺传承，纪录永恒——山东民间艺术之秧齐歌鲁.mp4">
                                     <div class="play-icon">
                                         <i class="bi bi-play-circle"></i>
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <div class="video-info mt-3">
-                                        <h5 class="video-title">秧齐歌鲁</h5>
+                                        <h5 class="video-title">匠艺传承，纪录永恒</h5>
                                         <p class="video-desc">山东民间艺术之秧齐歌鲁</p>
                                     </div>
 
@@ -571,49 +1011,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="video-card">
-                                <div class="video-thumbnail">
-                                    <img src="images/视频图片_12.jpg" alt="鼓子秧歌表演" class="card-img-top" id="DJ1""
-                                    data-video-src=" videos/济阳鼓子秧歌表演（2）.mp4">
-                                    <div class="play-icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="video-info mt-3">
-                                        <h5 class="video-title">鼓子秧歌表演</h5>
-                                        <p class="video-desc">济阳鼓子秧歌表演</p>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-
-                                            <button class="btn btn-sm btn-outline-secondary" data-toggle="modal"
-                                                data-target="#myModal2">评论</button>
-                                        </div>
-                                        <div id="tool">
-                                            <table>
-                                                <tr>
-                                                    <td><img src="./images/shou-cang.png" alt="收藏" width="19"
-                                                            height="19">
-                                                    </td>
-                                                    <td><img src="./images/down-load.png" alt="下载" width="19"
-                                                            height="19">
-                                                    </td>
-                                                    <td><img src="./images/co-py.png" alt="复制" width="19" height="19">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <!-- 视频播放器容器 -->
-                    <div id="videoPlayer" class="video-player">
+                    <!-- <div id="videoPlayer" class="video-player">
                         <div class="video-wrapper">
                             <video controls id="mainVideo">
                                 <source id="videoSource" type="video/mp4">
@@ -621,13 +1020,112 @@
                             </video>
                             <button class="close-btn">&times;</button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
-
+    </div>
+    <!-- 视频播放器容器 -->
+    <div id="videoPlayer" class="video-player">
+        <div class="video-wrapper">
+            <video controls id="mainVideo">
+                <source id="videoSource" type="video/mp4">
+                您的浏览器不支持视频播放
+            </video>
+            <button class="close-btn">&times;</button>
         </div>
+    </div>
+  </div>
+        
     </main>
+    <style>
+        /* 导航样式 */
+        .content-nav {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0px;
+          margin-left: 40%;
+          padding: 0 0px;
+        }
+        
+        .nav-item1 {
+          cursor: pointer;
+          font-size: 18px;
+          color: #333;
+          padding: 10px 15px;
+          position: relative;
+          transition: all 0.3s ease;
+        }
+        
+        .nav-item1::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          background: transparent;
+          transition: background 0.3s ease;
+        }
+        
+        .nav-item1:hover::after {
+          background: #ffc107;
+        }
+        
+        .nav-item1.active {
+          color: #ffc107;
+        }
+        
+        .nav-divider {
+          width: 1px;
+          height: 20px;
+          background: #333;
+          margin: 0 15px;
+        }
+        
+        /* 内容区域样式 */
+        /* .content-wrapper {
+          border: 1px solid #eee;
+          padding: 20px;
+          border-radius: 8px;
+        } */
+        
+        .content-section {
+          display: none;
+        }
+        
+        .content-section.active {
+          display: block;
+          animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        </style>
+        
+        <script>
+        // 获取元素
+        const navItems = document.querySelectorAll('.nav-item1');
+        const contentSections = document.querySelectorAll('.content-section');
+        
+        // 初始化显示第一部分内容
+        document.querySelector('.content-section').classList.add('active');
+        
+        // 添加事件监听
+        navItems.forEach(item => {
+          item.addEventListener('click', function() {
+            // 移除所有激活状态
+            navItems.forEach(nav => nav.classList.remove('active'));
+            contentSections.forEach(section => section.classList.remove('active'));
+        
+            // 设置当前激活状态
+            this.classList.add('active');
+            document.getElementById(this.dataset.target).classList.add('active');
+          });
+        });
+        </script>
     <!-- 模态框（model） -->
     <!-- 组件:时间线模态框(Modal) -->
     <div class="modal fade" id="myModal1">
@@ -805,15 +1303,15 @@
     <!-- 页脚 -->
     <footer>
         <nav>
-          <ul>
-            <li><a href="#"> 地址：山东省济南市南辛庄西路336号济南大学 |</li>
-            <li> <a href="#">&nbsp;邮编：250022 </a>|</li>
-            <li><a href="#"> &nbsp;电话：19707083897 </a>|</li>
-            <li><a href="mailto:2246354952@qq.com"> &nbsp;邮箱：2246354952@qq.com </a></li>
-          </ul>
+            <ul>
+                <li><a href="#"> 地址：山东省济南市南辛庄西路336号济南大学 |</li>
+                <li> <a href="#">&nbsp;邮编：250022 </a>|</li>
+                <li><a href="#"> &nbsp;电话：19707083897 </a>|</li>
+                <li><a href="mailto:2246354952@qq.com"> &nbsp;邮箱：2246354952@qq.com </a></li>
+            </ul>
         </nav>
         <address><a href="#">Copyright &copy; szyydnl</a></address>
-      </footer>
+    </footer>
     <script type="text/javascript" src="./js/jquery.slim.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
     <style>

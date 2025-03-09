@@ -9,112 +9,269 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <!-- 自定义样式 -->
     <link href="./css/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <!-- 新增页眉图片区块 -->
-    <header class="page-header">
-        <div class="container text-center">
-          <img src="./images/页眉_1.jpg" alt="页眉图片" class="header-image img-fluid">
-        </div>
-      </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+    <div class="container-fluid position-relative">
+      <!-- 页眉图片 -->
+      <div class="nav-header-image">
+        <img src="./images/logo.png" alt="Logo" class="img-fluid">
+      </div>
+  
+    <!-- 导航内容 -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mx-auto text-center">
+        <!-- 首页项 -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">首页</a>
+        </li>
+        <!-- 其他导航项 -->
+        <li class="nav-item">
+          <a class="nav-link" href="详细简介.html">秧歌介绍</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="演员信息.html">演员信息</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="表演视频.html">教育资源</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="全部奖项.html">过往奖项</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="演出地图.html">演出地图</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="关于我们.html">关于我们</a>
+        </li>
+      </ul>
+    </div>
+    <!-- 汉堡菜单按钮 -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<style>
+  /* 优化后的样式 */
+  .main-nav {
+    position: relative;
+    padding-left: 20%;
+    /* 为页眉图片留出空间 */
+    min-height: 80px;
+
+  }
+
+  .nav-header-image {
+    position: absolute;
+    left: -3%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32%;
+    padding: 0 15px;
+    z-index: 1;
+  }
+
+  .nav-item {
+    position: relative;
+    margin: 0 15px;
+  }
+
+  .nav-link {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+
+  /* 动态背景效果 */
+  .nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(images/纹理.jpg) center/cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  /* 桌面端样式 */
+  @media (min-width: 1500px) {
+    .navbar-nav {
+      width: 80%;
+      justify-content: flex-end;
+    }
+
+    .nav-item {
+      margin: 0 15px;
+    }
+
+    .dropdown-menu {
+      margin-top: 10px;
+    }
+  }
+
+  /* 平板端样式 */
+  @media (max-width: 1500px)and (min-width: 992px){
+    .main-nav {
+      padding-left: 0;
+      background: white;
+    }
+
+    .nav-header-image {
+      position: static;
+      width: 30%;
+      margin: 0 auto;
+      margin-top: 5%;
+      margin-left: 15%;
+      padding: 10px 0;
+    }
+
+    /* .navbar-collapse {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    } */
+
+    .nav-item {
+      margin: 5px 0;
+    }
+
+    .dropdown-menu {
+      margin-left: 20px;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  /* 移动端样式 */
+@media (max-width: 992.98px) {
+.main-nav {
+  padding-left: 0;
+  background: white;
+}
+
+.nav-header-image {
+  position: static;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 5%;
+
+  padding: 10px 0;
+  z-index: 1;
+}
+
+.navbar-toggler {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+.navbar-collapse {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav {
+  padding-top: 10px;
+  width: 100%; /* 确保宽度占满 */
+}
+
+.nav-item {
+  margin: 5px 0;
+  text-align: center; /* 文字居中 */
+}
+
+.nav-link {
+  padding: 10px 15px;
+  display: block; /* 确保链接占满宽度 */
+}
+}
+
+  /* 确保导航栏容器正确显示 */
+  .navbar-collapse {
+    transition: all 0.3s ease;
+  }
+
+
+
+  .nav-item.active::before,
+  .nav-item:hover::before {
+    opacity: 0.8;
+  }
+
+  /* 首页下拉按钮优化 */
+  .nav-link-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .dropdown-toggle {
+    border: none;
+    background: transparent;
+    padding: 0 0 0 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .arrow-icon {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border: 2px solid currentColor;
+    border-left: none;
+    border-top: none;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    margin-left: 5px;
+  }
+
+  .show .arrow-icon {
+    transform: rotate(-135deg);
+  }
+</style>
+
+
+  <script>
     
-      <!-- 修改后的导航栏 -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
-        <div class="container">
-          <div class="collapse navbar-collapse" id="navbarcollapse">
-            <ul class="navbar-nav mx-auto"> <!-- 使用mx-auto实现居中 -->
-                <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" href="index.html" id="dropdownMenuLink" role="button"
-                      data-toggle="dropdown" aria-expanded="false">
-                      首页
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <li><a href="index.html#index2" class="dropdown-item">演员信息</a></li>
-                      <li><a href="index.html#index3" class="dropdown-item">表演视频</a></li>
-                      <li><a href="index.html#index4" class="dropdown-item">获得奖项</a></li>
-                    </ul>
-                  </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="演员信息.html" id="dropdownMenuLink" role="button"
-                  data-toggle="dropdown" aria-expanded="false">
-                  相关内容
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <li><a href="详细简介.html" class="dropdown-item">详细简介</a></li>
-                  <li><a href="演员信息.html" class="dropdown-item">演员信息</a></li>
-                  <li><a href="表演视频.html" class="dropdown-item">表演视频</a></li>
-                  <li><a href="全部奖项.html" class="dropdown-item">全部奖项</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="演出地图.html">演出地图</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="关于我们.html">关于我们</a>
-              </li>
-            </ul>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse"
-            aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </nav>
-    
-      <style>
-        /* 自定义样式 */
-        .page-header {
-          background: #f3db99ea;
-          padding: 15px 0;
-          border-bottom: 1px solid #f8c301c4;
+
+    // 动态背景交互
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('mousemove', (e) => {
+        const rect = item.getBoundingClientRect();
+        const bg = item.querySelector('::before');
+        if (bg) {
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          bg.style.backgroundPosition = `${x}px ${y}px`;
         }
-    
-        .header-image {
-    
-          width: 100%;
-        }
-    
-        .main-nav {
-          border-top: 2px solid #e9ecef;
-          box-shadow: 0 2px 4px rgba(204, 171, 7, 0.1);
-        }
-    
-        .navbar-nav .nav-item {
-          margin: 0 15px;
-          position: relative;
-        }
-    
-        .navbar-nav .nav-link {
-          font-size: 16px;
-          color: #333;
-          transition: all 0.3s ease;
-        }
-    
-        .navbar-nav .nav-link:hover {
-          color: #007bff;
-          transform: translateY(-2px);
-        }
-    
-        .dropdown-menu {
-          border: none;
-          box-shadow: 0 4px 12px rgba(234, 182, 12, 0.875);
-        }
-    
-        @media (max-width: 992px) {
-          .header-image {
-            max-height: 60px;
-          }
-    
-          .navbar-nav .nav-item {
-            margin: 5px 0;
-          }
-    
-          .main-nav {
-            border-top-width: 1px;
-          }
-        }
-      </style>
+      });
+    });
+
+    // 当前页面高亮
+    const currentPath = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.parentElement.classList.add('active');
+      }
+    });
+  </script>
     <main role="main">
         <!-- 诗文欣赏卡片缩略图 -->
         <div class="album py-5 text">
@@ -132,7 +289,7 @@
                                     <div class="card-body">
                                         <h4>姚大新</h4>
                                         <p class="card-text">
-                                            男。第二批国家级非物质文化遗产项目秧歌（济阳鼓子秧歌）代表性传承人。</p>
+                                          男。第二批国家级非物质文化遗产项目秧歌（济阳鼓子秧歌）代表性传承人。擅长“头伞”表演，带队参与国际文化交流活动。长期开展校园传承工作，培养学员逾百名。</p>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +306,7 @@
                                     <div class="card-body">
                                         <h4>豆庆国</h4>
                                         <p class="card-text">
-                                            男。济阳仁风镇流沙村人，济阳鼓子秧歌省级传承人，山东农村优秀文化人才。 </p>
+                                          男。山东省第二批省级非物质文化遗产项目（济阳鼓子秧歌）代表性传承人，山东省农村优秀文化人才。专攻慢板大伞表演，团队多次获省级以上奖项。定期在校园及夜校开设传承课程。   </p>
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +323,7 @@
                                     <div class="card-body">
                                         <h4>豆永元</h4>
                                         <p class="card-text">
-                                            男。济阳鼓子秧歌市级传承人。曾参与海峡两岸非物质文化遗产展演大会。</p>
+                                          男。济阳鼓子秧歌市级传承人。参与海峡两岸非遗展演大会，担任秧歌队骨干成员。组织非遗进校园活动，培养传承后备人才。</p>
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +340,7 @@
                                     <div class="card-body">
                                         <h4>姚永琴</h4>
                                         <p class="card-text">
-                                            女。济阳鼓子秧歌市级传承人。曾参与海峡两岸非物质文化遗产展演大会。
+                                          女。济阳鼓子秧歌市级传承人，山东省舞蹈家协会会员。参与海峡两岸非遗展演大会，任职于山东省青少年宫。创新鼓子秧歌教学形式，改良道具与服饰设计，其原创舞蹈作品获省级奖项。  
                                         </p>
                                     </div>
                                 </div>
@@ -201,7 +358,7 @@
                                     <div class="card-body">
                                         <h4>杜成元</h4>
                                         <p class="card-text">
-                                            男。济阳鼓子秧歌区级传承人。</p>
+                                          男。济阳鼓子秧歌区级传承人。秧歌表演风格鲜明，多次参与省级展演活动。推动非遗进校园项目，培养新生代传承学员。</p>
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +375,7 @@
                                     <div class="card-body">
                                         <h4>张月立</h4>
                                         <p class="card-text">
-                                            男。济阳鼓子秧歌区级传承人。</p>
+                                          男。济阳鼓子秧歌区级传承人。长期参与各级非遗展演活动，团队核心成员。主导校园传承课程，助力青少年非遗教育普及。 </p>
                                     </div>
                                 </div>
                             </div>
@@ -235,7 +392,7 @@
                                     <div class="card-body">
                                         <h4>张运新</h4>
                                         <p class="card-text">
-                                            男。济阳鼓子秧歌区级传承人。</p>
+                                          男。济阳鼓子秧歌区级传承人。组织非遗培训班及专题讲座，推广鼓子秧歌文化。</p>
                                     </div>
                                 </div>
                             </div>
@@ -252,7 +409,7 @@
                                     <div class="card-body">
                                         <h4>位遵燕</h4>
                                         <p class="card-text">
-                                            女。济阳鼓子秧歌区级传承人。 </p>
+                                          女。济阳鼓子秧歌区级传承人。开展校园公益讲座，教授表演技巧及文化内涵，吸引青年群体参与非遗保护。 </p>
                                     </div>
                                 </div>
                             </div>
@@ -269,7 +426,7 @@
                                     <div class="card-body">
                                         <h4>位遵山</h4>
                                         <p class="card-text">
-                                            男。济阳鼓子秧歌区级传承人。曾参与海峡两岸非物质文化遗产展演大会。</p>
+                                          男。济阳鼓子秧歌区级传承人。参与海峡两岸非遗展演大会，推动校园传承项目，扩大鼓子秧歌在青少年中的影响力。</p>
                                     </div>
                                 </div>
                             </div>
@@ -286,7 +443,7 @@
                                     <div class="card-body">
                                         <h4>姚永腾</h4>
                                         <p class="card-text">
-                                            男。济阳鼓子秧歌区级继承人。曾参与海峡两岸非物质文化遗产展演大会。 </p>
+                                          男。济阳鼓子秧歌区级传承人。自幼学习鼓子秧歌“棒”动作，大学主修舞蹈专业。参与沿黄自驾游非遗展演及海峡两岸非遗展演大会，获展演金奖。  </p>
                                     </div>
                                 </div>
                             </div>
@@ -303,61 +460,13 @@
                                     <div class="card-body">
                                         <h4>司继文</h4>
                                         <p class="card-text">
-                                            男。济阳鼓子秧歌区级继承人。曾参与海峡两岸非物质文化遗产展演大会。</p>
+                                          男。济阳鼓子秧歌区级传承人。参与海峡两岸非遗展演大会，团队作品《齐风鲁鼓》获展演金奖。长期从事校园传承实践，系统传授鼓子秧歌技艺。  </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="row g-0">
-                                <div class="col-md-6">
-                                    <img src="./images/" alt="爱丽丝" class="card-img-top" id="DJ12">
-                                   
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-body">
-                                        <h4>爱丽丝</h4>
-                                        <p class="card-text">
-                                            </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="row g-0">
-                                <div class="col-md-6">
-                                    <img src="./images/" alt="爱丽丝" class="card-img-top" id="DJ13">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-body">
-                                        <h4>爱丽丝</h4>
-                                        <p class="card-text">
-                                             </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="row g-0">
-                                <div class="col-md-6">
-                                    <img src="./images/" alt="爱丽丝" class="card-img-top" id="DJ14">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-body">
-                                        <h4>爱丽丝</h4>
-                                        <p class="card-text">
-                                            </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

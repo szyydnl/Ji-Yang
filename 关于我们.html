@@ -9,112 +9,269 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <!-- 自定义样式 -->
     <link href="./css/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <!-- 新增页眉图片区块 -->
-    <header class="page-header">
-        <div class="container text-center">
-            <img src="./images/页眉_1.jpg" alt="页眉图片" class="header-image img-fluid">
-        </div>
-    </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+    <div class="container-fluid position-relative">
+      <!-- 页眉图片 -->
+      <div class="nav-header-image">
+        <img src="./images/logo.png" alt="Logo" class="img-fluid">
+      </div>
+  
+      <!-- 导航内容 -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto text-center">
+          <!-- 首页项 -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">首页</a>
+          </li>
+          <!-- 其他导航项 -->
+          <li class="nav-item">
+            <a class="nav-link" href="详细简介.html">秧歌介绍</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="演员信息.html">演员信息</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="表演视频.html">教育资源</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="全部奖项.html">过往奖项</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="演出地图.html">演出地图</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="关于我们.html">关于我们</a>
+          </li>
+        </ul>
+      </div>
+      <!-- 汉堡菜单按钮 -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
 
-    <!-- 修改后的导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarcollapse">
-                <ul class="navbar-nav mx-auto"> <!-- 使用mx-auto实现居中 -->
-                    <li class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="index.html" id="dropdownMenuLink" role="button"
-                          data-toggle="dropdown" aria-expanded="false">
-                          首页
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <li><a href="index.html#index2" class="dropdown-item">演员信息</a></li>
-                          <li><a href="index.html#index3" class="dropdown-item">表演视频</a></li>
-                          <li><a href="index.html#index4" class="dropdown-item">获得奖项</a></li>
-                        </ul>
-                      </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="演员信息.html" id="dropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
-                            相关内容
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a href="详细简介.html" class="dropdown-item">详细简介</a></li>
-                            <li><a href="演员信息.html" class="dropdown-item">演员信息</a></li>
-                            <li><a href="表演视频.html" class="dropdown-item">表演视频</a></li>
-                            <li><a href="全部奖项.html" class="dropdown-item">全部奖项</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="演出地图.html">演出地图</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="关于我们.html">关于我们</a>
-                    </li>
-                </ul>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse"
-                aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+  <style>
+    /* 优化后的样式 */
+    .main-nav {
+      position: relative;
+      padding-left: 20%;
+      /* 为页眉图片留出空间 */
+      min-height: 80px;
 
-    <style>
-        /* 自定义样式 */
-        .page-header {
-            background: #f3db99ea;
-            padding: 15px 0;
-            border-bottom: 1px solid #f8c301c4;
+    }
+
+    .nav-header-image {
+      position: absolute;
+      left: -3%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32%;
+      padding: 0 15px;
+      z-index: 1;
+    }
+
+    .nav-item {
+      position: relative;
+      margin: 0 15px;
+    }
+
+    .nav-link {
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    /* 动态背景效果 */
+    .nav-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(images/纹理.jpg) center/cover;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 0;
+    }
+
+    /* 桌面端样式 */
+    @media (min-width: 1500px) {
+      .navbar-nav {
+        width: 80%;
+        justify-content: flex-end;
+      }
+
+      .nav-item {
+        margin: 0 15px;
+      }
+
+      .dropdown-menu {
+        margin-top: 10px;
+      }
+    }
+
+    /* 平板端样式 */
+    @media (max-width: 1500px)and (min-width: 992px){
+      .main-nav {
+        padding-left: 0;
+        background: white;
+      }
+
+      .nav-header-image {
+        position: static;
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 5%;
+        margin-left: 15%;
+        padding: 10px 0;
+      }
+
+      /* .navbar-collapse {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      } */
+
+      .nav-item {
+        margin: 5px 0;
+      }
+
+      .dropdown-menu {
+        margin-left: 20px;
+        border: none;
+        box-shadow: none;
+      }
+    }
+
+    /* 移动端样式 */
+@media (max-width: 992.98px) {
+  .main-nav {
+    padding-left: 0;
+    background: white;
+  }
+
+  .nav-header-image {
+    position: static;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 5%;
+
+    padding: 10px 0;
+    z-index: 1;
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+ 
+  }
+
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-nav {
+    padding-top: 10px;
+    width: 100%; /* 确保宽度占满 */
+  }
+
+  .nav-item {
+    margin: 5px 0;
+    text-align: center; /* 文字居中 */
+  }
+
+  .nav-link {
+    padding: 10px 15px;
+    display: block; /* 确保链接占满宽度 */
+  }
+}
+
+    /* 确保导航栏容器正确显示 */
+    .navbar-collapse {
+      transition: all 0.3s ease;
+    }
+
+
+
+    .nav-item.active::before,
+    .nav-item:hover::before {
+      opacity: 0.8;
+    }
+
+    /* 首页下拉按钮优化 */
+    .nav-link-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .dropdown-toggle {
+      border: none;
+      background: transparent;
+      padding: 0 0 0 5px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .arrow-icon {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border: 2px solid currentColor;
+      border-left: none;
+      border-top: none;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+      margin-left: 5px;
+    }
+
+    .show .arrow-icon {
+      transform: rotate(-135deg);
+    }
+  </style>
+
+
+  <script>
+    
+
+    // 动态背景交互
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('mousemove', (e) => {
+        const rect = item.getBoundingClientRect();
+        const bg = item.querySelector('::before');
+        if (bg) {
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          bg.style.backgroundPosition = `${x}px ${y}px`;
         }
+      });
+    });
 
-        .header-image {
-
-            width: 100%;
-        }
-
-        .main-nav {
-            border-top: 2px solid #e9ecef;
-            box-shadow: 0 2px 4px rgba(204, 171, 7, 0.1);
-        }
-
-        .navbar-nav .nav-item {
-            margin: 0 15px;
-            position: relative;
-        }
-
-        .navbar-nav .nav-link {
-            font-size: 16px;
-            color: #333;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #007bff;
-            transform: translateY(-2px);
-        }
-
-        .dropdown-menu {
-            border: none;
-            box-shadow: 0 4px 12px rgba(234, 182, 12, 0.875);
-        }
-
-        @media (max-width: 992px) {
-            .header-image {
-                max-height: 60px;
-            }
-
-            .navbar-nav .nav-item {
-                margin: 5px 0;
-            }
-
-            .main-nav {
-                border-top-width: 1px;
-            }
-        }
-    </style>
+    // 当前页面高亮
+    const currentPath = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.parentElement.classList.add('active');
+      }
+    });
+  </script>
     <main role="main">
         <!-- 诗文欣赏卡片缩略图 -->
         <div class="album py-5 text">
@@ -133,7 +290,7 @@
                                 <div class="card-body">
                                     <div class="video-info mt-3">
                                         <h5 class="video-title">团队名称：“红心映国学，秧歌筑梦航”济南大学马克思主义学院暑假社会实践团</h5>
-                                        <p class="video-desc">团队成员：陈静怡、王晴、岳英箫、蓝欣玉、杨双飞、王枝烨、牛雅琪、孙发昊、肖卓涵、亓程浩、李晓、刘叶雨、夏秋蕴、薛易萌、张佳静、徐炜、李毅、赵景睿、焦梓桐、云瑛琦。</p>
+                                        <p class="video-desc">团队成员：陈静怡、王晴、岳英箫、蓝欣玉、杨双飞、王枝烨、牛雅琪、孙发昊、肖卓涵、李晓、刘叶雨、夏秋蕴、薛易萌、张佳静、徐炜、李毅。</p>
                                         <p class="video-desc">联系方式：19707083897（陈同学）</p>
                                         <p class="video-desc">通讯地址：山东省济南市市中区王官庄街道南辛庄西路336号济南大学</p>
                                     </div>

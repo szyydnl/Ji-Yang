@@ -1,5 +1,5 @@
 body{
-    background-image: url("../images/大背景_1.jpg");
+    background-color: rgba(205, 253, 12, 0.049);
     
 }
 .carousel{
@@ -59,7 +59,7 @@ main{
 
 footer{
     width: 100%;
-    background: linear-gradient(to right,rgba(172, 159, 16, 0.527),rgb(250, 253, 230),rgba(238, 225, 81, 0.856));    
+    background: linear-gradient(to right,rgba(226, 209, 21, 0.521),rgb(250, 253, 230),rgba(238, 225, 81, 0.663));    
     text-align: center;
     color:rgb(128,128,0);
     font-size: 12px;
@@ -95,11 +95,11 @@ body aside marquee{
     position:relative;
     font-size: 18px;
     width: 18px;
-    background: #0f1a52a0;
+    background: #d3d60d3e;
     display: inline-block;
     cursor: hand;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.515);
-    color: #f3e261d1;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.355);
+    color: #f3d919e3;
 }
 body aside:hover{
     margin-left: 0;
