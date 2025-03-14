@@ -23,7 +23,7 @@
         <img src="./images/logo.png" alt="Logo" class="img-fluid">
       </div>
 
-      
+
 
       <!-- 导航内容 -->
       <div class="collapse navbar-collapse" id="navbarContent">
@@ -123,7 +123,7 @@
     }
 
     /* 平板端样式 */
-    @media (max-width: 1500px)and (min-width: 992px){
+    @media (max-width: 1500px)and (min-width: 992px) {
       .main-nav {
         padding-left: 0;
         background: white;
@@ -158,53 +158,56 @@
     }
 
     /* 移动端样式 */
-@media (max-width: 992.98px) {
-  .main-nav {
-    padding-left: 0;
-    background: white;
-  }
+    @media (max-width: 992.98px) {
+      .main-nav {
+        padding-left: 0;
+        background: white;
+      }
 
-  .nav-header-image {
-    position: static;
-    width: 40%;
-    margin: 0 auto;
-    margin-top: 5%;
+      .nav-header-image {
+        position: static;
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 5%;
 
-    padding: 10px 0;
-    z-index: 1;
-  }
+        padding: 10px 0;
+        z-index: 1;
+      }
 
-  .navbar-toggler {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
- 
-  }
+      .navbar-toggler {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
 
-  .navbar-collapse {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
+      }
 
-  .navbar-nav {
-    padding-top: 10px;
-    width: 100%; /* 确保宽度占满 */
-  }
+      .navbar-collapse {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
 
-  .nav-item {
-    margin: 5px 0;
-    text-align: center; /* 文字居中 */
-  }
+      .navbar-nav {
+        padding-top: 10px;
+        width: 100%;
+        /* 确保宽度占满 */
+      }
 
-  .nav-link {
-    padding: 10px 15px;
-    display: block; /* 确保链接占满宽度 */
-  }
-}
+      .nav-item {
+        margin: 5px 0;
+        text-align: center;
+        /* 文字居中 */
+      }
+
+      .nav-link {
+        padding: 10px 15px;
+        display: block;
+        /* 确保链接占满宽度 */
+      }
+    }
 
     /* 确保导航栏容器正确显示 */
     .navbar-collapse {
@@ -276,10 +279,181 @@
       }
     });
   </script>
-  <aside>
-    <audio src="mp3/bgmp3.mp3" loop="loop" controls="controls" autoplay="autoplay"></audio>
-    <marquee direction="down">背<br>景<br>音<br>乐</marquee>
-  </aside>
+  <!-- 音乐播放器 -->
+  <div id="musicPlayer" class="music-player">
+    <div class="music-icon">
+      <span class="music-symbol">♪</span>
+    </div>
+    <audio id="bgMusic" loop>
+      <source src="mp3/bgmp3.mp3" type="audio/mpeg">
+      您的浏览器不支持音频播放
+      
+    </audio>
+    <div class="volume-control">
+      <input type="range" min="0" max="1" step="0.1" value="1">
+    </div>
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+    
+  </div>
+ 
+  
+  <style>
+  .volume-control {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .music-player:hover .volume-control {
+    opacity: 1;
+  }
+  </style>
+  
+  <script>
+  // 音量控制
+  const volumeControl = document.querySelector('.volume-control input');
+  volumeControl.addEventListener('input', (e) => {
+    bgMusic.volume = e.target.value;
+  });
+  </script>
+  
+  <style>
+  .progress-bar {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    width: 100px;
+    height: 3px;
+    background: rgba(255,255,255,0.3);
+  }
+  
+  .progress {
+    height: 100%;
+    background: #fff;
+    width: 0;
+  }
+  </style>
+  
+  <script>
+  // 更新进度
+  bgMusic.addEventListener('timeupdate', () => {
+    const progress = (bgMusic.currentTime / bgMusic.duration) * 100;
+    document.querySelector('.progress').style.width = `${progress}%`;
+  });
+  </script>
+  <style>
+    /* 音乐播放器样式 */
+    .music-player {
+      position: fixed;
+      left: 20px;
+      top: 20vh;
+      /* 距离顶部20% */
+      z-index: 9998;
+      cursor: pointer;
+    }
+
+    .music-icon {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .music-icon:hover {
+      transform: scale(1.1);
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .music-symbol {
+      color: #fff;
+      font-size: 24px;
+      transition: transform 0.6s linear;
+    }
+
+    /* 旋转动画 */
+    .playing .music-symbol {
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .music-player {
+        top: 45px;
+        left: 15px;
+      }
+
+      .music-icon {
+        width: 35px;
+        height: 35px;
+      }
+
+      .music-symbol {
+        font-size: 20px;
+      }
+    }
+  </style>
+
+  <script>
+    // 音乐播放控制
+    const musicPlayer = document.getElementById('musicPlayer');
+    const bgMusic = document.getElementById('bgMusic');
+    let isPlaying = true;
+
+    // 初始化自动播放
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        bgMusic.play();
+        musicPlayer.classList.add('playing');
+      } catch (error) {
+        console.log('自动播放被阻止:', error);
+        isPlaying = false;
+      }
+    });
+
+    // 点击切换播放状态
+    musicPlayer.addEventListener('click', () => {
+      if (isPlaying) {
+        bgMusic.pause();
+        musicPlayer.classList.remove('playing');
+      } else {
+        bgMusic.play();
+        musicPlayer.classList.add('playing');
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // 处理自动播放限制
+    document.addEventListener('click', function initAudio() {
+      if (!isPlaying) {
+        bgMusic.play();
+        musicPlayer.classList.add('playing');
+        isPlaying = true;
+      }
+      document.removeEventListener('click', initAudio);
+    }, { once: true });
+  </script>
   <main role="main" class="container-fluid p-4" id="index0">
     <div class="row align-items-start">
       <div class="col-md-1 pe-md-4"></div>
@@ -334,22 +508,22 @@
 
 
             <div class="content-wrapper">
-              <p class="index_jj mb-3"style="text-indent:2em">
+              <p class="index_jj mb-3" style="text-indent:2em">
                 济阳鼓子秧歌，这一具有千年历史的传统舞蹈，不仅是中国山东三大秧歌之一，更是黄河文化的瑰宝。它起源于明朝永乐年间，经过2000多年的发展，已成为黄河文化中不可分割的一部分。济阳鼓子秧歌以其独特的表演形式，如"街筒子"和"跑场子"，展现了浓厚的地方特色和丰富的情感表达。
               </p>
 
-              <p class="index_jj mb-3"style="text-indent:2em">
+              <p class="index_jj mb-3" style="text-indent:2em">
                 &nbsp&nbsp济阳鼓子秧歌的表演形式独特，既有"街筒子"，也有"跑场子"。表演者包括伞、鼓、棒、花等角色，每个角色都有自己独特的动作和道具。伞有丑伞和小伞之分，鼓有大鼓和小鼓之别，棒有长棒和短棒之异。通过各自的动作和道具，展现出丰富多彩的舞蹈内涵和鲜明的地方特色。
               </p>
 
-              <p class="index_jj mb-3"style="text-indent:2em">
+              <p class="index_jj mb-3" style="text-indent:2em">
                 &nbsp&nbsp济阳鼓子秧歌的特点是锣鼓铿锵有力，舞姿粗犷豪放，气势恢弘磅礴，情感纯朴热烈。它不仅体现了鲁北人民豪爽乐观、大方热情的性格，还具有旺盛的生命力和鲜明的地方风格。
               </p>
 
-              <p class="index_jj mb-3"style="text-indent:2em">
+              <p class="index_jj mb-3" style="text-indent:2em">
                 &nbsp&nbsp济阳鼓子秧歌的创新性融入现代元素，如参与泉水节、丰收节等，展现了传统与现代结合的新风貌。济阳鼓子秧歌不仅是中华文化瑰宝，更是连接古今、沟通世界的桥梁，代表着中国文化的自信与开放。
               </p>
-              <h6  style="position: relative;margin-left:80%;z-index: 9999;"><a href="详细简介.html">更多介绍➔</a></h6>
+              <h6 style="position: relative;margin-left:80%;z-index: 9999;"><a href="详细简介.html">更多介绍➔</a></h6>
             </div>
           </div>
         </div>
@@ -389,7 +563,7 @@
       </style>
     </div>
   </main>
-  
+
   <div class="l-wrapper is-load" data-page="top" style="margin-top: -8%;">
     <div class="l-top">
       <div class="l-top__content">
@@ -602,7 +776,7 @@
               </div>
               <!-- 右侧原有内容 -->
             </div>
-            
+
             <a href="演员信息.html" style="margin-left:85%;font-size: 25px;">更多演员➔
             </a>
 
@@ -786,7 +960,8 @@
                 <div class="col-md-6 col-lg-4 video-item">
                   <div class="video-card info-item  right-entrance">
                     <div class="video-thumbnail">
-                      <img src="images/视频图片_3.jpg" alt="鼓子秧歌" class="img-fluid" data-video-src="videos/韵动鼓歌，闪耀全运——济阳鼓子秧歌全运会表演.mp4">
+                      <img src="images/视频图片_3.jpg" alt="鼓子秧歌" class="img-fluid"
+                        data-video-src="videos/韵动鼓歌，闪耀全运——济阳鼓子秧歌全运会表演.mp4">
                       <div class="play-icon">
                         <i class="bi bi-play-circle"></i>
                       </div>
@@ -1247,96 +1422,97 @@
         }
       }
     }
+
     /* 新增关闭动画 */
-.daily-message.hide {
-  opacity: 0 !important;
-  transform: translateX(-100%);
-  transition: all 0.5s ease;
-}
+    .daily-message.hide {
+      opacity: 0 !important;
+      transform: translateX(-100%);
+      transition: all 0.5s ease;
+    }
   </style>
 
   <script>
-   // 消息控制功能
-const dailyMessage = document.getElementById('dailyMessage');
-let autoCloseTimer;
-let messageTimeout;
+    // 消息控制功能
+    const dailyMessage = document.getElementById('dailyMessage');
+    let autoCloseTimer;
+    let messageTimeout;
 
-// 关闭功能（修复版）
-function closeMessage() {
-  dailyMessage.classList.add('hide');
-  setTimeout(() => {
-    dailyMessage.style.display = 'none';
-    // 记录关闭时间（24小时后过期）
-    localStorage.setItem('messageClosed', Date.now());
-  }, 500); // 等待动画完成
-}
+    // 关闭功能（修复版）
+    function closeMessage() {
+      dailyMessage.classList.add('hide');
+      setTimeout(() => {
+        dailyMessage.style.display = 'none';
+        // 记录关闭时间（24小时后过期）
+        localStorage.setItem('messageClosed', Date.now());
+      }, 500); // 等待动画完成
+    }
 
-document.body.addEventListener('click', function(e) {
-  if (e.target.closest('.close-btn2')) {
-    closeMessage();
-    clearTimeout(autoCloseTimer);
-  }
-});
+    document.body.addEventListener('click', function (e) {
+      if (e.target.closest('.close-btn2')) {
+        closeMessage();
+        clearTimeout(autoCloseTimer);
+      }
+    });
 
-// 15秒自动关闭
-function startAutoClose() {
-  autoCloseTimer = setTimeout(() => {
-    closeMessage();
-  }, 10000); // 15秒
-}
+    // 15秒自动关闭
+    function startAutoClose() {
+      autoCloseTimer = setTimeout(() => {
+        closeMessage();
+      }, 15000); // 15秒
+    }
 
-// 初始化
-window.addEventListener('DOMContentLoaded', () => {
-  // 检查上次关闭时间
-  const lastClose = localStorage.getItem('messageClosed');
-  if (lastClose && Date.now() - lastClose < 86400000) {
-    dailyMessage.style.display = 'none';
-    return;
-  }
+    // 初始化
+    window.addEventListener('DOMContentLoaded', () => {
+      // 检查上次关闭时间
+      const lastClose = localStorage.getItem('messageClosed');
+      if (lastClose && Date.now() - lastClose < 86400000) {
+        dailyMessage.style.display = 'none';
+        return;
+      }
 
-  updateDailyMessage();
-  startAutoClose();
-  
-  // 10秒后变透明
-  messageTimeout = setTimeout(() => {
-    dailyMessage.style.opacity = '0.7';
-  }, 5000);
-});
+      updateDailyMessage();
+      startAutoClose();
 
-// 鼠标交互（增强版）
-dailyMessage.addEventListener('mouseenter', () => {
-  clearTimeout(messageTimeout);
-  clearTimeout(autoCloseTimer);
-  dailyMessage.style.opacity = '1';
-});
+      // 10秒后变透明
+      messageTimeout = setTimeout(() => {
+        dailyMessage.style.opacity = '0.7';
+      }, 5000);
+    });
 
-dailyMessage.addEventListener('mouseleave', () => {
-  // 重新开始自动关闭倒计时
-  startAutoClose();
-  
-  messageTimeout = setTimeout(() => {
-    dailyMessage.style.opacity = '0.7';
-  }, 3000);
-});
+    // 鼠标交互（增强版）
+    dailyMessage.addEventListener('mouseenter', () => {
+      clearTimeout(messageTimeout);
+      clearTimeout(autoCloseTimer);
+      dailyMessage.style.opacity = '1';
+    });
 
-// 触摸设备处理
-dailyMessage.addEventListener('touchstart', () => {
-  clearTimeout(autoCloseTimer);
-  dailyMessage.style.opacity = '1';
-});
+    dailyMessage.addEventListener('mouseleave', () => {
+      // 重新开始自动关闭倒计时
+      startAutoClose();
+
+      messageTimeout = setTimeout(() => {
+        dailyMessage.style.opacity = '0.7';
+      }, 3000);
+    });
+
+    // 触摸设备处理
+    dailyMessage.addEventListener('touchstart', () => {
+      clearTimeout(autoCloseTimer);
+      dailyMessage.style.opacity = '1';
+    });
     // 每日更新内容
     function updateDailyMessage() {
       const messages = [
-        "📢 每日动态",
-        "🌟 每日动态",
-        "🎁 每日动态",
+        "📢 每日科普：济阳区每年举办鼓子秧歌艺术节，最佳观赏期为农历正月十三至十六，现场可体验非遗传承人指导的‘三分钟速成秧歌步’。",
+        "🌟 每日科普：慢板鼓子秧歌也称老慢板或称旧派鼓子秧歌，以仁风镇的流河村秧歌为代表。它是山东地区少有的原生态鼓子秧歌，其特点是：具有伞、鼓、花三种角色；节奏单一，只有一个鼓点，速度极慢；动作舒展飘逸，柔中带刚。",
+        "🎁 每日科普：快板鼓子秧歌，也称新派鼓子秧歌，此派以仁风镇司家坊村的秧歌为代表。这一派的特点是“伞、鼓、棒、花”四个角色俱全；表演队伍庞大；节奏欢快，热情奔放：舞步矫健潇洒。",
         "🎉 每日科普：济阳鼓子秧歌四角色:济阳鼓子秧歌的主要角色为伞、鼓、棒、花，这种命名方式是根据舞者所持用的道具命名的。伞分为丑伞和花伞，丑伞多扮作老汉形象，花伞多扮作青年。大鼓用来打击主旋律，小鼓和音。棒，表现的是矫健青少年的形象。花，花又称“拉花”，代表少女形象。"
       ];
       const today = new Date().getDate() % messages.length;
       document.querySelector('.message-content p').textContent = messages[today];
     }
 
-   
+
   </script>
 
 </body>

@@ -474,9 +474,9 @@
        
     </main>
         <div id="return-top" class="top_e">
-            <img src="images/top.jpg" width="60px" id="img" >
+            
               <div style="width:60px;margin:auto;">
-                  <p id='font' style="font-size:20px;margin-left:10px;display:none;">返回<br>顶部</p>
+                  <p id='font' style="font-size:20px;margin-left:10px;">返回<br>顶部</p>
               </div>
           </div>
     <!-- 页脚 -->
@@ -602,7 +602,7 @@
         
         .top_e{
              position:fixed;right:10px;bottom:40px;
-             background:rgba(204,200,255,0.6);
+             background:rgba(224, 255, 200, 0.6);
              border-radius:15px;
              cursor:pointer;
              width:60px;
@@ -611,7 +611,7 @@
         .top_e:hover
         {
           color:white;
-          background:#1296DB;
+          background:#eef60ba9;
         }
      </style>
     <script>
@@ -629,7 +629,7 @@
             $("#font").show();
             })
             $(".top_e").mouseout(function(){
-            $("#font").hide();
+            // $("#font").hide();
             $("#img").show();
             })
     </script>

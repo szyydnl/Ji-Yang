@@ -81,33 +81,8 @@ footer li{
     height: 40px;
     width: 125px;
 }
-body aside{
-    position: fixed;
-    top:200px;
-    left:0;
-    margin-left: -305px;
-    z-index: 99;
-}
-body audio::-webkit-media-controls-panel{
-    background-color: #f6ef23a0;
-}
-body aside marquee{
-    position:relative;
-    font-size: 18px;
-    width: 18px;
-    background: #d3d60d3e;
-    display: inline-block;
-    cursor: hand;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.355);
-    color: #f3d919e3;
-}
-body aside:hover{
-    margin-left: 0;
-    display: block;
-}
-body aside:hover marquee{
-    display: none;
-}
+
+
 
 
 
