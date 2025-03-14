@@ -276,12 +276,45 @@
       }
     });
   </script>
+  <style>
+/* 添加音乐符号的CSS绘制 */
+.music-symbol {
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.music-symbol::before,
+.music-symbol::after {
+    content: '';
+    position: absolute;
+    background: #555;
+}
+
+.music-symbol::before {
+    width: 8px;
+    height: 20px;
+    left: 8px;
+    border-radius: 4px 4px 0 0;
+}
+
+.music-symbol::after {
+    width: 16px;
+    height: 8px;
+    top: 16px;
+    left: 0;
+    border-radius: 4px;
+    transform: rotate(15deg);
+}
+</style>
+
 <!-- HTML部分 -->
 <audio id="bgm" src="mp3/bgmp3.mp3" autoplay loop></audio>
 <div class="music-control" id="musicBtn">
-    <div class="music-icon">
-        <i class="fas fa-music"></i>
-    </div>
+    
+<div class="music-icon">
+    <div class="music-symbol"></div>
+</div>
 </div>
 
 <style>
