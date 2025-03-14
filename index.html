@@ -276,12 +276,84 @@
       }
     });
   </script>
-  <aside>
-    <audio src="mp3/bgmp3.mp3" loop controls autoplay muted>
-        Your browser does not support the audio element.
-    </audio>
-    <marquee direction="down">背<br>景<br>音<br>乐</marquee>
-  </aside>
+<!-- HTML部分 -->
+<audio id="bgm" src="mp3/bgmp3.mp3" autoplay loop></audio>
+<div class="music-control" id="musicBtn">
+    <div class="music-icon">
+        <i class="fas fa-music"></i>
+    </div>
+</div>
+
+<style>
+/* CSS部分 */
+.music-control {
+    position: fixed;
+    left: 20px;
+    top: 20%;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.music-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.fa-music {
+    font-size: 20px;
+    color: #555;
+}
+
+/* 旋转动画 */
+.play .fa-music {
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+// JS部分
+const bgm = document.getElementById('bgm');
+const musicBtn = document.getElementById('musicBtn');
+
+// 初始状态设为播放
+let isPlaying = true;
+musicBtn.classList.add('play');
+
+musicBtn.addEventListener('click', () => {
+    if(isPlaying) {
+        bgm.pause();
+        musicBtn.classList.remove('play');
+    } else {
+        bgm.play();
+        musicBtn.classList.add('play');
+    }
+    isPlaying = !isPlaying;
+});
+
+// 处理浏览器自动播放限制
+bgm.addEventListener('play', () => {
+    musicBtn.classList.add('play');
+});
+
+bgm.addEventListener('pause', () => {
+    musicBtn.classList.remove('play');
+});
+</script>
+
+<!-- 引入FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <main role="main" class="container-fluid p-4" id="index0">
     <div class="row align-items-start">
       <div class="col-md-1 pe-md-4"></div>
